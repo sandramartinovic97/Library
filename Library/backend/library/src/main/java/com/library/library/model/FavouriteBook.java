@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class FavouriteBook {
     @Id
     @GeneratedValue
-    private Integer favouriteBookId;
+    private Integer Id;
     @Column()
     private Integer bookId;
     @Column()

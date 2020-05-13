@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue
-    private Integer customerId;
+    private Integer Id;
     @Column()
     private String customerSurname;
     @Column()
