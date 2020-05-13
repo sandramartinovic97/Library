@@ -1,4 +1,9 @@
 package com.library.library.service;
 
-public class BookService {
+import com.library.library.model.Book;
+
+import java.util.Collection;
+
+public interface BookService {
+    public Collection<Book> getAllBooks();
 }
