@@ -1,7 +1,10 @@
 package com.library.library.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 public class Genre {
     @Id

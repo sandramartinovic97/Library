@@ -1,7 +1,9 @@
 package com.library.library.service;
 
-import org.springframework.stereotype.Service;
+import com.library.library.model.Genre;
 
-@Service
-public class GenreService {
+import java.util.List;
+
+public interface GenreService {
+    List<Genre> getGenres();
 }

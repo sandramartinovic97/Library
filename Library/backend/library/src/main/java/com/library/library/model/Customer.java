@@ -1,4 +1,3 @@
-/*
 package com.library.library.model;
 
 import lombok.Data;
@@ -10,8 +9,10 @@ import javax.persistence.*;
 @Entity
 public class Customer {
     @Id
-    @GeneratedValue
-    private Integer Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column()
+    private String customerName;
     @Column()
     private String customerSurname;
     @Column()
@@ -30,4 +31,4 @@ public class Customer {
     private String customerPassword;
 
 }
-*/
+
