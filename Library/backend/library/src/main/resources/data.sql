@@ -14,3 +14,7 @@ insert into Book (book_name, book_author, book_description, book_publisher, book
 values ('Harry Potter and the Philosophers Stone', 'J. K. Rowling', 'A young wizard discovers his
 magical heritage when he receives a letter of acceptance to Hogwarts School.
 Harry with the help of his friends faces the dark wizard Lord Voldemort.', 'Vulkan', 'Srpski', 1997, 600.00, 5);
+
+insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num,
+                        customer_email,customer_country,customer_city,customer_street,customer_password)
+values ('Marko','Markovic','m','+38162564736','mmarkovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobodjenja bb','marko')
