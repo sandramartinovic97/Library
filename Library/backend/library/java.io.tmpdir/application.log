@@ -3044,3 +3044,94 @@ java.lang.NullPointerException: null
 2020-05-13 18:11:47.497  INFO 3572 --- [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-05-13 18:11:47.497  INFO 3572 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-05-13 18:11:47.506  INFO 3572 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-05-13 18:22:59.111  INFO 13960 --- [main] com.library.library.LibraryApplication   : Starting LibraryApplication on DESKTOP-QVV0J5N with PID 13960 (D:\Agilni pristupi u razvoju softverskih proizvoda\Library\Library\backend\library\target\classes started by Sandra in D:\Agilni pristupi u razvoju softverskih proizvoda\Library\Library\backend\library)
+2020-05-13 18:22:59.121  INFO 13960 --- [main] com.library.library.LibraryApplication   : No active profile set, falling back to default profiles: default
+2020-05-13 18:23:00.258  INFO 13960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-13 18:23:00.377  INFO 13960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103ms. Found 4 JPA repository interfaces.
+2020-05-13 18:23:01.401  INFO 13960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2020-05-13 18:23:01.401  INFO 13960 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-13 18:23:01.401  INFO 13960 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-13 18:23:01.539  INFO 13960 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-13 18:23:01.539  INFO 13960 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2288 ms
+2020-05-13 18:23:01.601  INFO 13960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-13 18:23:01.887  INFO 13960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-13 18:23:01.895  INFO 13960 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-05-13 18:23:02.078  INFO 13960 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-13 18:23:02.139  INFO 13960 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-05-13 18:23:02.273  INFO 13960 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-13 18:23:02.389  INFO 13960 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-13 18:23:03.096  INFO 13960 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-13 18:23:03.112  INFO 13960 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-13 18:23:03.143  WARN 13960 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #9 of URL [file:/D:/Agilni%20pristupi%20u%20razvoju%20softverskih%20proizvoda/Library/Library/backend/library/target/classes/data.sql]: insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num, customer_email,customer_country,customer_city,customer_street,customer_password) values ('Marko','Markovic','m','+38162564736','mmarkovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobodjenja bb','marko'); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CUSTOMER_NAME" not found; SQL statement:
+insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num, customer_email,customer_country,customer_city,customer_street,customer_password) values ('Marko','Markovic','m','+38162564736','mmarkovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobodjenja bb','marko') [42122-200]
+2020-05-13 18:23:03.143  INFO 13960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-13 18:23:03.143  INFO 13960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-13 18:23:03.150  INFO 13960 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-13 18:23:03.150  INFO 13960 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-13 18:23:03.165 ERROR 13960 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #9 of URL [file:/D:/Agilni%20pristupi%20u%20razvoju%20softverskih%20proizvoda/Library/Library/backend/library/target/classes/data.sql]: insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num, customer_email,customer_country,customer_city,customer_street,customer_password) values ('Marko','Markovic','m','+38162564736','mmarkovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobodjenja bb','marko'); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CUSTOMER_NAME" not found; SQL statement:
+insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num, customer_email,customer_country,customer_city,customer_street,customer_password) values ('Marko','Markovic','m','+38162564736','mmarkovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobodjenja bb','marko') [42122-200]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at com.library.library.LibraryApplication.main(LibraryApplication.java:12) [classes/:na]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #9 of URL [file:/D:/Agilni%20pristupi%20u%20razvoju%20softverskih%20proizvoda/Library/Library/backend/library/target/classes/data.sql]: insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num, customer_email,customer_country,customer_city,customer_street,customer_password) values ('Marko','Markovic','m','+38162564736','mmarkovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobodjenja bb','marko'); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CUSTOMER_NAME" not found; SQL statement:
+insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num, customer_email,customer_country,customer_city,customer_street,customer_password) values ('Marko','Markovic','m','+38162564736','mmarkovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobodjenja bb','marko') [42122-200]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:622) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:49) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.runScripts(DataSourceInitializer.java:202) ~[spring-boot-autoconfigure-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:119) ~[spring-boot-autoconfigure-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:91) ~[spring-boot-autoconfigure-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:38) ~[spring-boot-autoconfigure-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.publishEventIfRequired(DataSourceInitializedPublisher.java:99) ~[spring-boot-autoconfigure-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.postProcessAfterInitialization(DataSourceInitializedPublisher.java:90) ~[spring-boot-autoconfigure-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	... 15 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CUSTOMER_NAME" not found; SQL statement:
+insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num, customer_email,customer_country,customer_city,customer_street,customer_password) values ('Marko','Markovic','m','+38162564736','mmarkovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobodjenja bb','marko') [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.message.DbException.get(DbException.java:205) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.message.DbException.get(DbException.java:181) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.table.Table.getColumn(Table.java:703) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parseColumn(Parser.java:1450) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parseColumnList(Parser.java:1435) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1804) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parseInsert(Parser.java:1749) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parsePrepared(Parser.java:954) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parse(Parser.java:843) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parse(Parser.java:815) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.prepareCommand(Parser.java:738) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.engine.Session.prepareLocal(Session.java:657) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.engine.Session.prepareCommand(Session.java:595) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201) ~[h2-1.4.200.jar:1.4.200]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-3.4.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-3.4.3.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:601) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	... 31 common frames omitted
+

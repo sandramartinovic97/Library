@@ -12,6 +12,8 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column()
+    private String customerName;
+    @Column()
     private String customerSurname;
     @Column()
     private String customerGender;
