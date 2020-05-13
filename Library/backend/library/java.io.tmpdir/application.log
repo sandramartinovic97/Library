@@ -2142,7 +2142,7 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2020-05-13 17:46:42.911 ERROR 16108 --- [http-nio-8083-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 
 java.lang.NullPointerException: null
-	at com.library.library.service.GenreServiceImplementation.getGenres(GenreImpl.java:15) ~[classes/:na]
+	at com.library.library.service.GenreImpl.getGenres(GenreImpl.java:15) ~[classes/:na]
 	at com.library.library.controller.GenreController.getGenres(GenreController.java:24) ~[classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
@@ -2198,7 +2198,7 @@ java.lang.NullPointerException: null
 2020-05-13 17:50:26.620 ERROR 16108 --- [http-nio-8083-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 
 java.lang.NullPointerException: null
-	at com.library.library.service.GenreServiceImplementation.getGenres(GenreImpl.java:15) ~[classes/:na]
+	at com.library.library.service.GenreImpl.getGenres(GenreImpl.java:15) ~[classes/:na]
 	at com.library.library.controller.GenreController.getGenres(GenreController.java:24) ~[classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
@@ -2279,7 +2279,7 @@ java.lang.NullPointerException: null
 2020-05-13 17:51:41.563 ERROR 14968 --- [http-nio-8083-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 
 java.lang.NullPointerException: null
-	at com.library.library.service.GenreServiceImplementation.getGenres(GenreImpl.java:15) ~[classes/:na]
+	at com.library.library.service.GenreImpl.getGenres(GenreImpl.java:15) ~[classes/:na]
 	at com.library.library.controller.GenreController.getGenres(GenreController.java:24) ~[classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
@@ -2335,7 +2335,7 @@ java.lang.NullPointerException: null
 2020-05-13 17:51:47.217 ERROR 14968 --- [http-nio-8083-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 
 java.lang.NullPointerException: null
-	at com.library.library.service.GenreServiceImplementation.getGenres(GenreImpl.java:15) ~[classes/:na]
+	at com.library.library.service.GenreImpl.getGenres(GenreImpl.java:15) ~[classes/:na]
 	at com.library.library.controller.GenreController.getGenres(GenreController.java:24) ~[classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
@@ -2391,7 +2391,7 @@ java.lang.NullPointerException: null
 2020-05-13 17:51:50.512 ERROR 14968 --- [http-nio-8083-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 
 java.lang.NullPointerException: null
-	at com.library.library.service.GenreServiceImplementation.getGenres(GenreImpl.java:15) ~[classes/:na]
+	at com.library.library.service.GenreImpl.getGenres(GenreImpl.java:15) ~[classes/:na]
 	at com.library.library.controller.GenreController.getGenres(GenreController.java:24) ~[classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
@@ -2447,7 +2447,7 @@ java.lang.NullPointerException: null
 2020-05-13 17:51:58.943 ERROR 14968 --- [http-nio-8083-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 
 java.lang.NullPointerException: null
-	at com.library.library.service.GenreServiceImplementation.getGenres(GenreImpl.java:15) ~[classes/:na]
+	at com.library.library.service.GenreImpl.getGenres(GenreImpl.java:15) ~[classes/:na]
 	at com.library.library.controller.GenreController.getGenres(GenreController.java:24) ~[classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
@@ -2528,7 +2528,7 @@ java.lang.NullPointerException: null
 2020-05-13 17:53:28.085 ERROR 15132 --- [http-nio-8083-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 
 java.lang.NullPointerException: null
-	at com.library.library.service.GenreServiceImplementation.getGenres(GenreImpl.java:15) ~[classes/:na]
+	at com.library.library.service.GenreImpl.getGenres(GenreImpl.java:15) ~[classes/:na]
 	at com.library.library.controller.GenreController.getGenres(GenreController.java:24) ~[classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
