@@ -1,22 +1,18 @@
-/*
 package com.library.library.model;
-
 import lombok.Data;
-
 import javax.persistence.*;
 import java.util.Date;
 
 @Data
 @Entity
-public class Order {
+public class BookOrder {
     @Id
-    @GeneratedValue()
-    private Integer orderId;
-    @Column()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column
     private Date orderDate;
-    @Column()
+    @Column
     private String orderStatus;
-    @Column()
+    @Column
     private Double orderPrice;
 }
-*/

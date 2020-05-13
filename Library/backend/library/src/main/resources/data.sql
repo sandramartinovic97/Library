@@ -4,6 +4,8 @@ insert into Genre (genre_name) values ('Mystery');
 insert into Genre (genre_name) values ('Novel');
 insert into Genre (genre_name) values ('Fantasy');
 
+insert into Book_Order (order_date,order_price,order_status) values (parsedatetime('17-09-2012 18:47:52.690', 'dd-MM-yyyy hh:mm:ss.SS'), 1000,'Complete');
+
 insert into Book (book_name, book_author, book_description, book_publisher, book_language, book_year, book_price, book_quantity)
 values ('The Great Gatsby', 'F. Scott Fitzgerald', 'The story of this novel primarily concerns the young and mysterious millionaire
 Jay Gatsby and his passion and obsession with the beautiful former debutante Daisy Buchanan.', 'Vulkan', 'Srpski', 1925, 500.00, 10);
