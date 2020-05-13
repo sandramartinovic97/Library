@@ -1,3 +1,4 @@
+/*
 package com.library.library.model;
 
 import lombok.Data;
@@ -29,3 +30,4 @@ public class Customer {
     private String customerPassword;
 
 }
+*/
