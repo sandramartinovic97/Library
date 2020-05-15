@@ -7,7 +7,7 @@ import java.util.Collection;
 public interface CustomerService {
     public Collection<Customer> getAllCustomers();
 
-    public Customer getOne(Integer id);
+   // public Customer getOne(Integer id);
 
     public boolean existsById(Integer id);
 
