@@ -16,4 +16,29 @@ public class CustomerServiceImplementation implements  CustomerService{
     public Collection<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
+    @Override
+    public Customer getOne(Integer id) {
+        return customerRepository.getOne(id);
+
+    }
+
+    @Override
+    public boolean existsById(Integer id) {
+        return customerRepository.existsById(id);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        customerRepository.deleteById(id);
+    }
+
+    @Override
+    public void save(Customer customer) {
+        customerRepository.save(customer);
+    }
+
+    @Override
+    public Customer getCustomerById(Integer id) {
+        return customerRepository.getCustomerById(id);
+    }
 }
