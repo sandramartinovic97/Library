@@ -9,4 +9,8 @@ public interface FavouriteBookService {
     public Collection<FavouriteBook> getAllFavouriteBooks();
 
     public Customer getFavouriteBook(Integer id);
+
+    public boolean existsById(Integer id);
+
+    public void deleteFavouriteBookById(Integer id);
 }

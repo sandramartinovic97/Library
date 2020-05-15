@@ -22,4 +22,14 @@ public class FavouriteBookServiceImplementation implements FavouriteBookService 
     public Customer getFavouriteBook(Integer id) {
         return favouriteBookRepository.getFavouriteBookById(id);
     }
+
+    @Override
+    public boolean existsById(Integer id) {
+        return favouriteBookRepository.existsById(id);
+    }
+
+    @Override
+    public void deleteFavouriteBookById(Integer id) {
+        favouriteBookRepository.deleteById(id);
+    }
 }
