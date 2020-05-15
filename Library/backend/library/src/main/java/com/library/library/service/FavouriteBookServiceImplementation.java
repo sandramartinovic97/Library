@@ -1,6 +1,5 @@
 package com.library.library.service;
 
-import com.library.library.model.Customer;
 import com.library.library.model.FavouriteBook;
 import com.library.library.repository.FavouriteBookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ public class FavouriteBookServiceImplementation implements FavouriteBookService 
     }
 
     @Override
-    public Customer getFavouriteBook(Integer id) {
+    public FavouriteBook getFavouriteBook(Integer id) {
         return favouriteBookRepository.getFavouriteBookById(id);
     }
 
@@ -31,5 +30,15 @@ public class FavouriteBookServiceImplementation implements FavouriteBookService 
     @Override
     public void deleteFavouriteBookById(Integer id) {
         favouriteBookRepository.deleteById(id);
+    }
+
+    @Override
+    public void postFavouriteBook(FavouriteBook favouritebook) {
+        favouriteBookRepository.save(favouritebook);
+    }
+
+    @Override
+    public void updateFavouriteBook(FavouriteBook favouritebook) {
+        favouriteBookRepository.save(favouritebook);
     }
 }

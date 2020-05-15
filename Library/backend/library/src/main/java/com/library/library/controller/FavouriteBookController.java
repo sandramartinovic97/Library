@@ -6,10 +6,7 @@ import com.library.library.service.FavouriteBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -25,7 +22,7 @@ public class FavouriteBookController {
     }
 
     @GetMapping("favouritebook/{id}")
-    public Customer getFavouriteBook(@PathVariable("id") Integer id){
+    public FavouriteBook getFavouriteBook(@PathVariable("id") Integer id){
         return favouriteBookService.getFavouriteBook(id);
 
     }
@@ -36,5 +33,19 @@ public class FavouriteBookController {
         favouriteBookService.deleteFavouriteBookById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
+    @PostMapping("favouritebook")
+    public ResponseEntity<FavouriteBook> insertFavouriteBook(@RequestBody FavouriteBook favouritebook){
+        if(!favouriteBookService.existsById(favouritebook.getId())){
+            favouriteBookService.postFavouriteBook(favouritebook);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.CONFLICT);
+    }
+    @PutMapping("favouritebook")
+    public ResponseEntity<FavouriteBook> updateFavouriteBook(@RequestBody FavouriteBook favouritebook) {
+        if (!favouriteBookService.existsById(favouritebook.getId()))
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        favouriteBookService.updateFavouriteBook(favouritebook);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

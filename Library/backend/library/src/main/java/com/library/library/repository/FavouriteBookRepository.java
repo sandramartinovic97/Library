@@ -6,6 +6,6 @@ import com.library.library.model.FavouriteBook;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FavouriteBookRepository extends JpaRepository<FavouriteBook, Integer> {
-    Customer getFavouriteBookById(Integer id);
+    FavouriteBook getFavouriteBookById(Integer id);
 }
 
