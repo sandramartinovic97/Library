@@ -2688,3 +2688,28 @@ org.springframework.dao.EmptyResultDataAccessException: No class com.library.lib
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.34.jar:9.0.34]
 	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
 
+2020-05-17 22:53:05.029  INFO 18572 --- [main] com.library.library.LibraryApplication   : Starting LibraryApplication on DESKTOP-QVV0J5N with PID 18572 (D:\Agilni pristupi u razvoju softverskih proizvoda\Library\Library\backend\library\target\classes started by Sandra in D:\Agilni pristupi u razvoju softverskih proizvoda\Library\Library\backend\library)
+2020-05-17 22:53:05.031  INFO 18572 --- [main] com.library.library.LibraryApplication   : No active profile set, falling back to default profiles: default
+2020-05-17 22:53:06.152  INFO 18572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 22:53:06.238  INFO 18572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78ms. Found 6 JPA repository interfaces.
+2020-05-17 22:53:06.987  INFO 18572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2020-05-17 22:53:06.997  INFO 18572 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-17 22:53:06.997  INFO 18572 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-17 22:53:07.148  INFO 18572 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-17 22:53:07.148  INFO 18572 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2036 ms
+2020-05-17 22:53:07.201  INFO 18572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-17 22:53:07.421  INFO 18572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-17 22:53:07.427  INFO 18572 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-05-17 22:53:07.575  INFO 18572 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 22:53:07.656  INFO 18572 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-05-17 22:53:07.790  INFO 18572 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 22:53:07.915  INFO 18572 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-17 22:53:08.741  INFO 18572 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 22:53:08.747  INFO 18572 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 22:53:09.321  WARN 18572 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 22:53:09.471  INFO 18572 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-17 22:53:09.931  INFO 18572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2020-05-17 22:53:09.935  INFO 18572 --- [main] com.library.library.LibraryApplication   : Started LibraryApplication in 5.459 seconds (JVM running for 6.356)
+2020-05-17 22:53:18.821  INFO 18572 --- [http-nio-8083-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-17 22:53:18.821  INFO 18572 --- [http-nio-8083-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-17 22:53:18.840  INFO 18572 --- [http-nio-8083-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
