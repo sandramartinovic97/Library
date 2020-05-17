@@ -24,8 +24,13 @@ public class GenreController {
         return genreService.getGenreById(id);
     }
 
+    @PostMapping
+    public Genre createGenre(@RequestBody Genre genre) {
+        return genreService.createGenre(genre);
+    }
+
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id) {
+    public void deleteGenre(@PathVariable("id") Integer id) {
         genreService.deleteGenre(id);
     }
 }
