@@ -3,9 +3,7 @@ package com.library.library.controller;
 import com.library.library.model.Genre;
 import com.library.library.service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,5 +17,20 @@ public class GenreController {
     @GetMapping
     public List<Genre> getGenres() {
         return genreService.getGenres();
+    }
+
+    @GetMapping("/{id}")
+    public Genre getGenreById(@PathVariable("id") Integer id) {
+        return genreService.getGenreById(id);
+    }
+
+    @PostMapping
+    public Genre createGenre(@RequestBody Genre genre) {
+        return genreService.createGenre(genre);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteGenre(@PathVariable("id") Integer id) {
+        genreService.deleteGenre(id);
     }
 }

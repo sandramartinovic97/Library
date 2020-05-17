@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface GenreService {
     List<Genre> getGenres();
+    Genre getGenreById(Integer id);
+    Genre createGenre(Genre genre);
+    void deleteGenre(Integer id);
 }
