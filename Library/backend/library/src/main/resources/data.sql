@@ -24,3 +24,6 @@ values ('Petar','Petrovic','m','+38163444736','ppetrovic@gmail.com','Serbia','No
 
 insert into Favourite_Book (book_id,customer_id) values (1,1);
 insert into Favourite_Book (book_id,customer_id) values (2,1);
+
+insert into Book_Genre (book_id,genre_id) values (1,3);
+insert into Book_Genre (book_id,genre_id) values (2,5);
