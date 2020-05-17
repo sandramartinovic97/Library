@@ -25,16 +25,18 @@ public class GenreServiceImplementation implements GenreService {
 
     @Override
     public Genre createGenre(Genre genre) {
-        Genre newGenre = new Genre();
-        newGenre.setGenreName(genre.getGenreName());
-        genreRepository.save(newGenre);
+        return genreRepository.save(genre);
+    }
 
-        return newGenre;
+    @Override
+    public Genre updateGenre(Integer id, Genre genre) {
+        Genre genreDB = getGenreById(id);
+        genreDB.setGenreName(genre.getGenreName());
+        return genreRepository.save(genreDB);
     }
 
     @Override
     public void deleteGenre(Integer id) {
-        Genre genre = genreRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find genre with id=" + id));
-        genreRepository.delete(genre);
+        genreRepository.deleteById(id);
     }
 }
