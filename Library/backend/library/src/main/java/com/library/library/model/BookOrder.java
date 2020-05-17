@@ -15,4 +15,8 @@ public class BookOrder {
     private String orderStatus;
     @Column
     private Double orderPrice;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="customer_id")
+    private Customer customer;
 }

@@ -7,4 +7,8 @@ import java.util.Collection;
 
 public interface BookOrderService {
     public Collection<BookOrder> getAllOrders();
+    public BookOrder getOrderById(Integer id);
+    public void delete(Integer id);
+    public BookOrder postOrder(BookOrder bookOrder);
+    public BookOrder updateOrder(BookOrder bookOrder, Integer id);
 }
