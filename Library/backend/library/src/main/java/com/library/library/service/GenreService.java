@@ -5,7 +5,8 @@ import com.library.library.model.Genre;
 import java.util.List;
 
 public interface GenreService {
-    public List<Genre> getGenres();
-    public Genre getGenreById(Integer id);
+    List<Genre> getGenres();
+    Genre getGenreById(Integer id);
+    Genre createGenre(Genre genre);
     void deleteGenre(Integer id);
 }
