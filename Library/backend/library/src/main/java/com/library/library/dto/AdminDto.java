@@ -1,24 +1,16 @@
-package com.library.library.model;
+package com.library.library.dto;
 
 import lombok.Data;
 
-import javax.persistence.*;
-
 @Data
-@Entity
-public class Admin {
+public class AdminDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column
     private String adminUsername;
-    @Column
     private String adminEmail;
-    @Column
     private String adminPassword;
 
-    /*public static class Builder {
+    public static class Builder {
 
         private Integer id;
         private String adminUsername;
@@ -44,14 +36,14 @@ public class Admin {
             return this;
         }
 
-        public Admin build() {
-            Admin admin = new Admin();
-            admin.id = this.id;
-            admin.adminUsername = this.adminUsername;
-            admin.adminEmail = this.adminEmail;
-            admin.adminPassword = this.adminPassword;
+        public AdminDto build() {
+            AdminDto adminDto = new AdminDto();
+            adminDto.id = this.id;
+            adminDto.adminUsername = this.adminUsername;
+            adminDto.adminEmail = this.adminEmail;
+            adminDto.adminPassword = this.adminPassword;
 
-            return admin;
+            return adminDto;
         }
-    }*/
+    }
 }

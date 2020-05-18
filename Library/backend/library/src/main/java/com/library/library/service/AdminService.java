@@ -1,5 +1,6 @@
 package com.library.library.service;
 
+import com.library.library.dto.AdminDto;
 import com.library.library.model.Admin;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 public interface AdminService {
     List<Admin> getAdmins();
     Admin getAdminById(Integer id);
-    Admin createAdmin(Admin admin);
-    Admin updateAdmin(Integer id, Admin admin);
+    AdminDto createAdmin(AdminDto adminDto);
+    AdminDto updateAdmin(Integer id, AdminDto adminDto);
     void deleteAdmin(Integer id);
 }

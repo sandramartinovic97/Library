@@ -1,5 +1,7 @@
 package com.library.library.service;
 
+import com.library.library.dto.AdminDto;
+import com.library.library.dto.AdminFactory;
 import com.library.library.model.Admin;
 import com.library.library.repository.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,8 @@ import java.util.List;
 public class AdminServiceImplementation implements AdminService{
     @Autowired
     private AdminRepository adminRepository;
+    @Autowired
+    private AdminFactory adminFactory;
 
     @Override
     public List<Admin> getAdmins() {
@@ -24,17 +28,27 @@ public class AdminServiceImplementation implements AdminService{
     }
 
     @Override
-    public Admin createAdmin(Admin admin) {
-        return adminRepository.save(admin);
+    public AdminDto createAdmin(AdminDto adminDto) {
+        Admin admin = adminFactory.adminDtoToAdmin(adminDto);
+        adminRepository.save(admin);
+
+        return adminFactory.adminToAdminDto(admin);
     }
 
     @Override
-    public Admin updateAdmin(Integer id, Admin admin) {
-        Admin adminDB = getAdminById(id);
-        adminDB.setAdminUsername(admin.getAdminUsername());
-        adminDB.setAdminEmail(admin.getAdminEmail());
-        adminDB.setAdminPassword(admin.getAdminPassword());
-        return adminRepository.save(adminDB);
+    public AdminDto updateAdmin(Integer id, AdminDto adminDto) {
+        Admin admin = getAdminById(id);
+        Admin updatedAdmin = adminFactory.update(admin, adminDto);
+        adminRepository.save(updatedAdmin);
+
+        return adminFactory.adminToAdminDto(updatedAdmin);
+
+/*        Admin admin = getAdminById(id);
+        admin.setAdminUsername(adminDto.getAdminUsername());
+        admin.setAdminEmail(adminDto.getAdminEmail());
+        admin.setAdminPassword(adminDto.getAdminPassword());
+        adminRepository.save(admin);
+        return admin;*/
     }
 
     @Override

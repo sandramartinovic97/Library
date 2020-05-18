@@ -1,5 +1,6 @@
 package com.library.library.controller;
 
+import com.library.library.dto.AdminDto;
 import com.library.library.model.Admin;
 import com.library.library.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,13 +26,13 @@ public class AdminController {
     }
 
     @PostMapping
-    public Admin createAdmin(@RequestBody Admin admin) {
-        return adminService.createAdmin(admin);
+    public AdminDto createAdmin(@RequestBody AdminDto adminDto) {
+        return adminService.createAdmin(adminDto);
     }
 
     @PutMapping("/{id}")
-    public Admin updateAdmin(@PathVariable("id") Integer id,@RequestBody Admin admin) {
-        return adminService.updateAdmin(id, admin);
+    public AdminDto updateAdmin(@PathVariable("id") Integer id,@RequestBody AdminDto adminDto) {
+        return adminService.updateAdmin(id, adminDto);
     }
 
     @DeleteMapping("/{id}")
