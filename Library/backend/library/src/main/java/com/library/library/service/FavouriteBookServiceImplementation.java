@@ -5,6 +5,7 @@ import com.library.library.repository.FavouriteBookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.Collection;
 
 @Service
@@ -19,7 +20,7 @@ public class FavouriteBookServiceImplementation implements FavouriteBookService 
 
     @Override
     public FavouriteBook getFavouriteBook(Integer id) {
-        return favouriteBookRepository.getFavouriteBookById(id);
+        return favouriteBookRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find favourite book with specified id="+id));
     }
 
     @Override
@@ -33,12 +34,17 @@ public class FavouriteBookServiceImplementation implements FavouriteBookService 
     }
 
     @Override
-    public void postFavouriteBook(FavouriteBook favouritebook) {
-        favouriteBookRepository.save(favouritebook);
+    public FavouriteBook updateFavouriteBook(FavouriteBook favouritebook, Integer id) {
+        FavouriteBook favouriteBookFromDB = getFavouriteBook(id);
+        favouriteBookFromDB.setBook(favouritebook.getBook());
+        favouriteBookFromDB.setCustomer(favouritebook.getCustomer());
+
+        return favouriteBookRepository.save(favouriteBookFromDB);
     }
 
     @Override
-    public void updateFavouriteBook(FavouriteBook favouritebook) {
-        favouriteBookRepository.save(favouritebook);
+    public FavouriteBook insertFavouriteBook(FavouriteBook favouritebook) {
+        return favouriteBookRepository.save(favouritebook);
     }
+
 }

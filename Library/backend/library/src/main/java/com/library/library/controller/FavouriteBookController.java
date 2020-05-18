@@ -11,41 +11,38 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
+@RequestMapping("/favouritebook")
 public class FavouriteBookController {
 
     @Autowired
     private FavouriteBookService favouriteBookService;
 
-    @GetMapping("favouritebook")
+    @GetMapping
     public Collection<FavouriteBook> getAllFavouriteBooks(){
         return favouriteBookService.getAllFavouriteBooks();
     }
 
-    @GetMapping("favouritebook/{id}")
+    @GetMapping("/{id}")
     public FavouriteBook getFavouriteBook(@PathVariable("id") Integer id){
         return favouriteBookService.getFavouriteBook(id);
-
     }
-    @DeleteMapping("favouritebook/{id}")
+
+    @DeleteMapping("/{id}")
     public ResponseEntity<FavouriteBook> deleteFavouriteBook(@PathVariable ("id") Integer id){
         if(!favouriteBookService.existsById(id))
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         favouriteBookService.deleteFavouriteBookById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    @PostMapping("favouritebook")
-    public ResponseEntity<FavouriteBook> insertFavouriteBook(@RequestBody FavouriteBook favouritebook){
-        if(!favouriteBookService.existsById(favouritebook.getId())){
-            favouriteBookService.postFavouriteBook(favouritebook);
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.CONFLICT);
+    @PostMapping
+    public FavouriteBook insertFavouriteBook(@RequestBody FavouriteBook favouritebook){
+       return favouriteBookService.insertFavouriteBook(favouritebook);
     }
-    @PutMapping("favouritebook")
-    public ResponseEntity<FavouriteBook> updateFavouriteBook(@RequestBody FavouriteBook favouritebook) {
-        if (!favouriteBookService.existsById(favouritebook.getId()))
+    @PutMapping("/{id}")
+    public ResponseEntity<FavouriteBook> updateFavouriteBook(@RequestBody FavouriteBook favouritebook,@PathVariable ("id") Integer id) {
+        if (!favouriteBookService.existsById(id))
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        favouriteBookService.updateFavouriteBook(favouritebook);
+        favouriteBookService.updateFavouriteBook(favouritebook,id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
