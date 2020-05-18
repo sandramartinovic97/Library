@@ -30,26 +30,31 @@ public class BookServiceImplementation implements BookService {
         return bookRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find book with id=" + id));
     }
 
-    @Override
-    public boolean existsBookById(Integer id) { return bookRepository.existsById(id); }
 
     @Override
-    public void postBook(Book book) {
-        bookRepository.save(book);
+    public Book postBook(Book book) {
+        return bookRepository.save(book);
     }
 
     @Override
     public void deleteBook(Integer id) {
-
-        //   treba dodati
-        //   jdbcTemplate.execute("delete from Favourite_Book where book_id = "+id);
-        //   jdbcTemplate.execute("delete from Book_Order where book_id = "+id); -- iz tabele bookGenre
-        // jdbcTemplate.execute("delete from Favourite_Book where book_id = "+id); --iz tabele item
+        jdbcTemplate.execute("delete from FAVOURITE_BOOK where book_id = "+id);
+        jdbcTemplate.execute("delete from BOOK_GENRE where book_id = "+id);
+        jdbcTemplate.execute("delete from ORDER_ITEM where book_id = "+id);
         bookRepository.deleteById(id);
     }
 
     @Override
-    public void putBook(Book book) {
-        bookRepository.save(book);
+    public Book updateBook(Book book, Integer id) {
+        Book bookFromDB=getBookById(id);
+        bookFromDB.setBookAuthor(book.getBookAuthor());
+        bookFromDB.setBookDescription(book.getBookDescription());
+        bookFromDB.setBookLanguage(book.getBookLanguage());
+        bookFromDB.setBookName(book.getBookName());
+        bookFromDB.setBookPrice(book.getBookPrice());
+        bookFromDB.setBookPublisher(book.getBookPublisher());
+        bookFromDB.setBookQuantity(book.getBookQuantity());
+        bookFromDB.setBookYear(book.getBookYear());
+        return bookRepository.save(book);
     }
 }

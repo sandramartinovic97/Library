@@ -21,20 +21,13 @@ public class BookGenreImplementation implements BookGenreService{
 
     @Override
     public BookGenre getBookGenreById(Integer id) {
-        return bookGenreRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find book with id=" + id));
+        return bookGenreRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find book genre with id=" + id));
     }
 
-    @Override
-    public boolean existsBookGenreById(Integer id) {
-        return bookGenreRepository.existsById(id);
-    }
 
     @Override
-    public void postBookGenre(BookGenre bookGenre) {
-        BookGenre newBookGenre= new BookGenre();
-        newBookGenre.setBookId(bookGenre.getBookId());
-        newBookGenre.setGenreId(bookGenre.getGenreId());
-        bookGenreRepository.save(newBookGenre);
+    public BookGenre postBookGenre(BookGenre bookGenre) {
+        return bookGenreRepository.save(bookGenre);
     }
 
     @Override
@@ -43,7 +36,11 @@ public class BookGenreImplementation implements BookGenreService{
     }
 
     @Override
-    public void putBookGenre(BookGenre bookGenre) {
-        bookGenreRepository.save(bookGenre);
+    public BookGenre updateBookGenre(BookGenre bookGenre, Integer id) {
+        BookGenre bookGenreFromDB = getBookGenreById(id);
+        bookGenreFromDB.setGenre(bookGenre.getGenre());
+        bookGenreFromDB.setBook(bookGenre.getBook());
+        return bookGenreRepository.save(bookGenreFromDB);
+
     }
 }

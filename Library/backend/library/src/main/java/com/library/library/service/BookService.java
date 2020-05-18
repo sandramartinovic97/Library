@@ -9,11 +9,9 @@ public interface BookService {
 
     public Book getBookById(Integer id);
 
-    public boolean existsBookById(Integer id);
-
-    public void postBook(Book book);
+    public Book postBook(Book book);
 
     public void deleteBook(Integer id);
 
-    public void putBook(Book book);
+    public Book updateBook(Book book, Integer id);
 }

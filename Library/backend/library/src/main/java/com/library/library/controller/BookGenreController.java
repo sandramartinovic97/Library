@@ -23,35 +23,22 @@ public class BookGenreController {
     }
 
     @GetMapping("/{id}")
-    public BookGenre getBookGenresById(@PathVariable("id") Integer id) {
+    public BookGenre getBookGenreById(@PathVariable("id") Integer id) {
         return bookGenreService.getBookGenreById(id);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<BookGenre> deleteBookGenre(@PathVariable("id") Integer id) {
-
-        if(bookGenreService.existsBookGenreById(id)){
+    public void deleteBookGenre(@PathVariable("id") Integer id) {
             bookGenreService.deleteBookGenre(id);
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
     @PostMapping
-    public ResponseEntity<BookGenre> postBookGenre(@RequestBody BookGenre bookGenre){
-        if(!bookGenreService.existsBookGenreById(bookGenre.getId())){
-            bookGenreService.postBookGenre(bookGenre);
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.CONFLICT);
+    public BookGenre postBookGenre(@RequestBody BookGenre bookGenre){
+           return bookGenreService.postBookGenre(bookGenre);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<BookGenre> putBook(@RequestBody BookGenre bookGenre){
-        if(bookGenreService.existsBookGenreById(bookGenre.getId())){
-            bookGenreService.putBookGenre(bookGenre);
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.CONFLICT);
+    public BookGenre updateBookGenre(@RequestBody BookGenre bookGenre, @PathVariable("id") Integer id){
+            return bookGenreService.updateBookGenre(bookGenre,id);
     }
 }

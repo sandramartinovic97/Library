@@ -3,15 +3,13 @@ package com.library.library.controller;
 import com.library.library.model.Book;
 import com.library.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
 
 @RestController
-@RequestMapping("/book")
+@RequestMapping("/books")
 public class BookController {
 
     @Autowired
@@ -28,30 +26,17 @@ public class BookController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Book> deleteBook(@PathVariable("id") Integer id) {
-
-        if(bookService.existsBookById(id)){
+    public void deleteBook(@PathVariable("id") Integer id) {
             bookService.deleteBook(id);
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
     @PostMapping
-    public ResponseEntity<Book> postBook(@RequestBody Book book){
-        if(!bookService.existsBookById(book.getId())){
-            bookService.postBook(book);
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.CONFLICT);
+    public Book postBook(@RequestBody Book book){
+           return  bookService.postBook(book);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Book> putBook(@RequestBody Book book){
-        if(bookService.existsBookById(book.getId())){
-            bookService.putBook(book);
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.CONFLICT);
+    public Book putBook(@RequestBody Book book, @PathVariable("id") Integer id){
+        return bookService.updateBook(book,id);
     }
 }
