@@ -10,40 +10,36 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
+@RequestMapping("/customer")
 public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping("customer")
+    @GetMapping
     public Collection<Customer> getAllCustomers(){
         return customerService.getAllCustomers();
     }
-    @GetMapping("customer/{id}")
-    public Customer getCustomer(@PathVariable("id") Integer id){
+    @GetMapping("/{id}")
+    public Customer getCustomerById(@PathVariable("id") Integer id){
         return customerService.getCustomerById(id);
-
     }
-    @DeleteMapping("customer/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Customer> deleteCustomer(@PathVariable ("id") Integer id){
         if(!customerService.existsById(id))
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        customerService.deleteById(id);
+        customerService.deleteCustomerById(id);
 		return new ResponseEntity<>(HttpStatus.OK);
     }
-  @PostMapping("customer")
-    public ResponseEntity<Customer> insertCustomer(@RequestBody Customer customer){
-        if(!customerService.existsById(customer.getId())){
-            customerService.save(customer);
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.CONFLICT);
+    @PostMapping
+    public Customer insertCustomer(@RequestBody Customer customer){
+        return customerService.insertCustomer(customer);
     }
-    @PutMapping("customer")
-    public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer) {
-        if (!customerService.existsById(customer.getId()))
+    @PutMapping("/{id}")
+    public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer,@PathVariable("id") Integer id) {
+        if (!customerService.existsById(id))
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        customerService.save(customer);
+        customerService.updateCustomer(customer,id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
