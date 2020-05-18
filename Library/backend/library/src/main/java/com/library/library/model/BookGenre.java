@@ -15,12 +15,10 @@ public class BookGenre {
     private Integer id;
 
     @ManyToOne(cascade = CascadeType.MERGE)
-    @OnDelete(action= OnDeleteAction.CASCADE)
     @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book book;
 
     @ManyToOne(cascade = CascadeType.MERGE)
-    @OnDelete(action= OnDeleteAction.CASCADE)
     @JoinColumn(name = "genre_id", referencedColumnName = "id")
     private Genre genre;
 
