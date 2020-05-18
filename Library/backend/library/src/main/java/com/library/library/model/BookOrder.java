@@ -1,5 +1,7 @@
 package com.library.library.model;
+
 import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,7 +18,7 @@ public class BookOrder {
     @Column
     private Double orderPrice;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="customer_id")
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
 }

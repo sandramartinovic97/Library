@@ -31,3 +31,5 @@ insert into Book_Genre (book_id,genre_id) values (1,3);
 insert into Book_Genre (book_id,genre_id) values (2,5);
 
 insert into Admin (admin_username, admin_email, admin_password) values ('admin', 'admin@gmail.com', 'admin123');
+
+insert into Order_Item (order_id, book_id, item_price, item_quantity) values (1,1,1000.0,2);
