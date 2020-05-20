@@ -3,12 +3,8 @@ package com.library.library.service;
 import com.library.library.dto.BookDto;
 import com.library.library.dto.BookGenreDto;
 import com.library.library.dto.GenreDto;
-import com.library.library.model.Book;
-import com.library.library.model.BookGenre;
-import com.library.library.model.Genre;
+import com.library.library.model.*;
 import com.library.library.repository.BookGenreRepository;
-import com.library.library.repository.BookRepository;
-import com.library.library.repository.GenreRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,10 +18,6 @@ public class BookGenreImplementation implements BookGenreService{
 
     @Autowired
     private BookGenreRepository bookGenreRepository;
-    @Autowired
-    private BookRepository bookRepository;
-    @Autowired
-    private GenreRepository genreRepository;
 
     private ModelMapper modelMapper=new ModelMapper();
 
@@ -59,18 +51,10 @@ public class BookGenreImplementation implements BookGenreService{
 
     @Override
     public BookGenreDto postBookGenre(BookGenreDto bookGenreDto) {
-        /*Book book = bookRepository.findById(bookGenreDto.getBookDto().getId()).orElseThrow(() -> new EntityNotFoundException("Could not find book"));
-        Genre genre = genreRepository.findById(bookGenreDto.getGenreDto().getId()).orElseThrow(() -> new EntityNotFoundException("Could not find genre"));
-        bookGenreDto.setBookDto(modelMapper.map(book, BookDto.class));
-        bookGenreDto.setGenreDto(modelMapper.map(genre, GenreDto.class));*/
         BookGenre bookGenre = modelMapper.map(bookGenreDto, BookGenre.class);
-        /*bookGenre.setGenre(modelMapper.map(bookGenreDto.getGenreDto(), Genre.class));
-        bookGenre.setBook(modelMapper.map(bookGenreDto.getBookDto(), Book.class));*/
-        BookGenre bookGenreSaved=bookGenreRepository.save(bookGenre);
-        BookGenreDto bookGenreDtoSaved = new  BookGenreDto();
-        bookGenreDtoSaved.setGenreDto(modelMapper.map(bookGenreSaved.getGenre(), GenreDto.class));
-        bookGenreDtoSaved.setBookDto(modelMapper.map(bookGenreSaved.getBook(), BookDto.class));
-        return modelMapper.map(bookGenreSaved, BookGenreDto.class);
+        BookGenre bookGenreSaved = bookGenreRepository.save(bookGenre);
+        BookGenreDto bookGenreDtoSaved = modelMapper.map(bookGenreSaved, BookGenreDto.class);
+        return bookGenreDtoSaved;
     }
 
     @Override
@@ -80,11 +64,12 @@ public class BookGenreImplementation implements BookGenreService{
 
     @Override
     public BookGenreDto updateBookGenre(BookGenreDto bookGenreDto, Integer id) {
-        BookGenre updatedBookGenre = modelMapper.map(bookGenreDto, BookGenre.class);
         BookGenre bookGenreFromDB = bookGenreRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find order item with specified id=" + id));
-        bookGenreFromDB.setBook(updatedBookGenre.getBook());
-        bookGenreFromDB.setGenre(updatedBookGenre.getGenre());
-        return modelMapper.map(bookGenreRepository.save(bookGenreFromDB), BookGenreDto.class);
+        bookGenreFromDB.setBook(modelMapper.map(bookGenreDto.getBookDto(), Book.class));
+        bookGenreFromDB.setGenre(modelMapper.map(bookGenreDto.getGenreDto(), Genre.class));
+        BookGenre bookGenreUpdated=bookGenreRepository.save(bookGenreFromDB);
+        BookGenreDto bookGenreUpdatedDto = modelMapper.map(bookGenreUpdated, BookGenreDto.class);
+        return bookGenreUpdatedDto;
     }
 
    /* private BookGenreDto entityToDto(BookGenre bookGenre) {
