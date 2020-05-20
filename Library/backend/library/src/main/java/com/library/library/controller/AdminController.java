@@ -1,9 +1,10 @@
 package com.library.library.controller;
 
 import com.library.library.dto.AdminDto;
-import com.library.library.model.Admin;
 import com.library.library.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,27 +17,30 @@ public class AdminController {
     private AdminService adminService;
 
     @GetMapping
-    public List<Admin> getAdmins() {
+    public List<AdminDto> getAdmins() {
         return adminService.getAdmins();
     }
 
     @GetMapping("/{id}")
-    public Admin getAdminById(@PathVariable("id") Integer id) {
+    public AdminDto getAdminById(@PathVariable("id") Integer id) {
         return adminService.getAdminById(id);
     }
 
     @PostMapping
-    public AdminDto createAdmin(@RequestBody AdminDto adminDto) {
-        return adminService.createAdmin(adminDto);
+    public ResponseEntity<String> createAdmin(@RequestBody AdminDto adminDto) {
+        adminService.createAdmin(adminDto);
+        return ResponseEntity.status(HttpStatus.OK).body("New admin is created.");
     }
 
     @PutMapping("/{id}")
-    public AdminDto updateAdmin(@PathVariable("id") Integer id,@RequestBody AdminDto adminDto) {
-        return adminService.updateAdmin(id, adminDto);
+    public ResponseEntity<String> updateAdmin(@PathVariable("id") Integer id,@RequestBody AdminDto adminDto) {
+        adminService.updateAdmin(id, adminDto);
+        return ResponseEntity.status(HttpStatus.OK).body("Admin with id=" + id + " is updated.");
     }
 
     @DeleteMapping("/{id}")
-    public void deleteAdmin(@PathVariable("id") Integer id) {
+    public ResponseEntity<String> deleteAdmin(@PathVariable("id") Integer id) {
         adminService.deleteAdmin(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Admin with id=" + id + " is deleted.");
     }
 }
