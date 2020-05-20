@@ -1,17 +1,18 @@
 package com.library.library.service;
 
+import com.library.library.dto.BookDto;
 import com.library.library.model.Book;
 
 import java.util.Collection;
 
 public interface BookService {
-    public Collection<Book> getAllBooks();
+    public Collection<BookDto> getAllBooks();
 
-    public Book getBookById(Integer id);
+    public BookDto getBookById(Integer id);
 
-    public Book postBook(Book book);
+    public BookDto postBook(BookDto bookDto);
 
     public void deleteBook(Integer id);
 
-    public Book updateBook(Book book, Integer id);
+    public BookDto updateBook(BookDto bookDto, Integer id);
 }

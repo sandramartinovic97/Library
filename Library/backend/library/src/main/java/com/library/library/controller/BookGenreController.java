@@ -1,5 +1,6 @@
 package com.library.library.controller;
 
+import com.library.library.dto.BookGenreDto;
 import com.library.library.model.BookGenre;
 import com.library.library.service.BookGenreService;
 
@@ -18,27 +19,30 @@ public class BookGenreController {
     private BookGenreService bookGenreService;
 
     @GetMapping
-    public Collection<BookGenre> getAllBookGenres() {
+    public Collection<BookGenreDto> getAllBookGenres() {
         return bookGenreService.getAllBookGenre();
     }
 
     @GetMapping("/{id}")
-    public BookGenre getBookGenreById(@PathVariable("id") Integer id) {
+    public BookGenreDto getBookGenreById(@PathVariable("id") Integer id) {
         return bookGenreService.getBookGenreById(id);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteBookGenre(@PathVariable("id") Integer id) {
-            bookGenreService.deleteBookGenre(id);
+    public ResponseEntity<String> deleteBookGenre(@PathVariable("id") Integer id){
+        bookGenreService.deleteBookGenre(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Book genre with id=" + id + " is deleted.");
     }
 
     @PostMapping
-    public BookGenre postBookGenre(@RequestBody BookGenre bookGenre){
-           return bookGenreService.postBookGenre(bookGenre);
+    public ResponseEntity<String> postBookGenre(@RequestBody BookGenreDto bookGenreDto){
+        bookGenreService.postBookGenre(bookGenreDto);
+        return ResponseEntity.status(HttpStatus.OK).body("New book genre is created.");
     }
 
     @PutMapping("/{id}")
-    public BookGenre updateBookGenre(@RequestBody BookGenre bookGenre, @PathVariable("id") Integer id){
-            return bookGenreService.updateBookGenre(bookGenre,id);
+    public ResponseEntity<String> updateBookGenre(@RequestBody BookGenreDto bookGenreDto, @PathVariable("id") Integer id){
+         bookGenreService.updateBookGenre(bookGenreDto,id);
+         return ResponseEntity.status(HttpStatus.OK).body("The book genre is updated.");
     }
 }

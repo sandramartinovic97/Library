@@ -1,18 +1,18 @@
 package com.library.library.service;
 
-import com.library.library.model.BookGenre;
+import com.library.library.dto.BookGenreDto;
 
 import java.util.Collection;
 
 public interface BookGenreService {
 
-    public Collection<BookGenre> getAllBookGenre();
+    public Collection<BookGenreDto> getAllBookGenre();
 
-    public BookGenre getBookGenreById(Integer id);
+    public BookGenreDto getBookGenreById(Integer id);
 
-    public BookGenre postBookGenre(BookGenre book);
+    public BookGenreDto postBookGenre(BookGenreDto bookGenreDto);
 
     public void deleteBookGenre(Integer id);
 
-    public BookGenre updateBookGenre(BookGenre bookGenre, Integer id);
+    public BookGenreDto updateBookGenre(BookGenreDto bookGenreDto, Integer id);
 }
