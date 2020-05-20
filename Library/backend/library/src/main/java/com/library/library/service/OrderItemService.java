@@ -1,17 +1,18 @@
 package com.library.library.service;
 
+import com.library.library.dto.OrderItemDto;
 import com.library.library.model.OrderItem;
 
 import java.util.Collection;
 
 public interface OrderItemService {
-    public Collection<OrderItem> getAllItems();
+    public Collection<OrderItemDto> getAllItems();
 
-    public OrderItem getItemById(Integer id);
+    public OrderItemDto getItemById(Integer id);
 
-    public OrderItem postItem(OrderItem orderItem);
+    public OrderItemDto postItem(OrderItemDto orderItemDto);
 
     public void deleteItem(Integer id);
 
-    public OrderItem updateItem(OrderItem orderItem, Integer id);
+    public OrderItemDto updateItem(OrderItemDto orderItemDto, Integer id);
 }

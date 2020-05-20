@@ -1,5 +1,6 @@
 package com.library.library.controller;
 
+import com.library.library.dto.OrderItemDto;
 import com.library.library.model.OrderItem;
 import com.library.library.service.OrderItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,18 +15,18 @@ public class OrderItemController {
     private OrderItemService orderItemService;
 
     @GetMapping
-    public Collection<OrderItem> getAllItems() {
+    public Collection<OrderItemDto> getAllItems() {
         return orderItemService.getAllItems();
     }
 
     @GetMapping("/{id}")
-    public OrderItem getItemById(@PathVariable("id") Integer id) {
+    public OrderItemDto getItemById(@PathVariable("id") Integer id) {
         return orderItemService.getItemById(id);
     }
 
     @PostMapping
-    public void postItem(@RequestBody OrderItem orderItem) {
-        orderItemService.postItem(orderItem);
+    public void postItem(@RequestBody OrderItemDto orderItemDto) {
+        orderItemService.postItem(orderItemDto);
     }
 
     @DeleteMapping("/{id}")
@@ -34,7 +35,7 @@ public class OrderItemController {
     }
 
     @PutMapping("/{id}")
-    public OrderItem updateItem(@PathVariable("id") Integer id, @RequestBody OrderItem orderItem) {
-        return orderItemService.updateItem(orderItem, id);
+    public OrderItemDto updateItem(@PathVariable("id") Integer id, @RequestBody OrderItemDto orderItemDto) {
+        return orderItemService.updateItem(orderItemDto, id);
     }
 }

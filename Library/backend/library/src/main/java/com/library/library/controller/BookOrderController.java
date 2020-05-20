@@ -1,5 +1,6 @@
 package com.library.library.controller;
 
+import com.library.library.dto.BookOrderDto;
 import com.library.library.model.Book;
 import com.library.library.model.BookOrder;
 import com.library.library.repository.BookOrderRepository;
@@ -16,12 +17,12 @@ public class BookOrderController {
     private BookOrderService bookOrderService;
 
     @GetMapping
-    public Collection<BookOrder> getAllOrders() {
+    public Collection<BookOrderDto> getAllOrders() {
         return bookOrderService.getAllOrders();
     }
 
     @GetMapping("/{id}")
-    public BookOrder getOrderById(@PathVariable("id") Integer id) {
+    public BookOrderDto getOrderById(@PathVariable("id") Integer id) {
         return bookOrderService.getOrderById(id);
     }
 
@@ -31,13 +32,13 @@ public class BookOrderController {
     }
 
     @PostMapping()
-    public void postOrder(@RequestBody BookOrder order) {
-        bookOrderService.postOrder(order);
+    public void postOrder(@RequestBody BookOrderDto orderDto) {
+        bookOrderService.postOrder(orderDto);
     }
 
     @PutMapping("/{id}")
-    public BookOrder updateOrder(@RequestBody BookOrder bookOrder, @PathVariable("id") Integer id) {
-        return bookOrderService.updateOrder(bookOrder, id);
+    public BookOrderDto updateOrder(@RequestBody BookOrderDto bookOrderDto, @PathVariable("id") Integer id) {
+        return bookOrderService.updateOrder(bookOrderDto, id);
     }
 }
 
