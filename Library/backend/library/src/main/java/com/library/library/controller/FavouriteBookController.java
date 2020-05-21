@@ -1,5 +1,6 @@
 package com.library.library.controller;
 
+import com.library.library.dto.FavouriteBookDto;
 import com.library.library.model.Customer;
 import com.library.library.model.FavouriteBook;
 import com.library.library.service.FavouriteBookService;
@@ -18,28 +19,28 @@ public class FavouriteBookController {
     private FavouriteBookService favouriteBookService;
 
     @GetMapping
-    public Collection<FavouriteBook> getAllFavouriteBooks(){
+    public Collection<FavouriteBookDto> getAllFavouriteBooks(){
         return favouriteBookService.getAllFavouriteBooks();
     }
 
     @GetMapping("/{id}")
-    public FavouriteBook getFavouriteBook(@PathVariable("id") Integer id){
+    public FavouriteBookDto getFavouriteBook(@PathVariable("id") Integer id){
         return favouriteBookService.getFavouriteBook(id);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<FavouriteBook> deleteFavouriteBook(@PathVariable ("id") Integer id){
+    public ResponseEntity<FavouriteBookDto> deleteFavouriteBook(@PathVariable ("id") Integer id){
         if(!favouriteBookService.existsById(id))
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         favouriteBookService.deleteFavouriteBookById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
     @PostMapping
-    public FavouriteBook insertFavouriteBook(@RequestBody FavouriteBook favouritebook){
+    public FavouriteBookDto insertFavouriteBook(@RequestBody FavouriteBookDto favouritebook){
        return favouriteBookService.insertFavouriteBook(favouritebook);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<FavouriteBook> updateFavouriteBook(@RequestBody FavouriteBook favouritebook,@PathVariable ("id") Integer id) {
+    public ResponseEntity<FavouriteBookDto> updateFavouriteBook(@RequestBody FavouriteBookDto favouritebook,@PathVariable ("id") Integer id) {
         if (!favouriteBookService.existsById(id))
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         favouriteBookService.updateFavouriteBook(favouritebook,id);

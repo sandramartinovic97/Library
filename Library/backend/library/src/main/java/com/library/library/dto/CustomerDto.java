@@ -1,10 +1,13 @@
 package com.library.library.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data
 public class CustomerDto {
+
     private Integer id;
+
     private String customerName;
     private String customerSurname;
     private String customerGender;

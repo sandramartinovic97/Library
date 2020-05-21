@@ -1,5 +1,6 @@
 package com.library.library.controller;
 
+import com.library.library.dto.CustomerDto;
 import com.library.library.model.Customer;
 import com.library.library.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,26 +18,27 @@ public class CustomerController {
     private CustomerService customerService;
 
     @GetMapping
-    public Collection<Customer> getAllCustomers(){
+    public Collection<CustomerDto> getAllCustomers(){
         return customerService.getAllCustomers();
     }
     @GetMapping("/{id}")
-    public Customer getCustomerById(@PathVariable("id") Integer id){
+    public CustomerDto getCustomerById(@PathVariable("id") Integer id){
         return customerService.getCustomerById(id);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<Customer> deleteCustomer(@PathVariable ("id") Integer id){
+    public ResponseEntity<CustomerDto> deleteCustomer(@PathVariable ("id") Integer id){
         if(!customerService.existsById(id))
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         customerService.deleteCustomerById(id);
 		return new ResponseEntity<>(HttpStatus.OK);
     }
     @PostMapping
-    public Customer insertCustomer(@RequestBody Customer customer){
+    public CustomerDto insertCustomer(@RequestBody CustomerDto customer){
         return customerService.insertCustomer(customer);
     }
+
     @PutMapping("/{id}")
-    public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer,@PathVariable("id") Integer id) {
+    public ResponseEntity<CustomerDto> updateCustomer(@RequestBody CustomerDto customer,@PathVariable("id") Integer id) {
         if (!customerService.existsById(id))
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         customerService.updateCustomer(customer,id);

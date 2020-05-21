@@ -144,7 +144,7 @@ public class OrderItemServiceImplementation implements OrderItemService {
 
     private CustomerDto customerEntityToDto(Customer customer) {
         CustomerDto customerDto = new CustomerDto();
-        customerDto.setId(customer.getId());
+       // customerDto.setId(customer.getId());
         customerDto.setCustomerName(customer.getCustomerName());
         customerDto.setCustomerSurname(customer.getCustomerSurname());
         customerDto.setCustomerGender(customer.getCustomerGender());
@@ -159,7 +159,7 @@ public class OrderItemServiceImplementation implements OrderItemService {
 
     private Customer customerDtoToEntity(CustomerDto customerDto) {
         Customer customer = new Customer();
-        customer.setId(customerDto.getId());
+      //  customer.setId(customerDto.getId());
         customer.setCustomerName(customerDto.getCustomerName());
         customer.setCustomerSurname(customerDto.getCustomerSurname());
         customer.setCustomerGender(customerDto.getCustomerGender());
