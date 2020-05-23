@@ -1,8 +1,6 @@
 package com.library.library.service;
 
 import com.library.library.dto.FavouriteBookDto;
-import com.library.library.model.Customer;
-import com.library.library.model.FavouriteBook;
 
 import java.util.Collection;
 

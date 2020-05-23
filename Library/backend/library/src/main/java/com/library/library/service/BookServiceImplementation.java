@@ -63,7 +63,7 @@ public class BookServiceImplementation implements BookService {
     @Override
     public BookDto updateBook(BookDto bookDto, Integer id) {
         Book updatedBook = modelMapper.map(bookDto, Book.class);
-        Book bookFromDB=bookRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find book with specified id=" + id));;
+        Book bookFromDB=bookRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find book with specified id=" + id));
         bookFromDB.setBookAuthor(updatedBook.getBookAuthor());
         bookFromDB.setBookDescription(updatedBook.getBookDescription());
         bookFromDB.setBookLanguage(updatedBook.getBookLanguage());

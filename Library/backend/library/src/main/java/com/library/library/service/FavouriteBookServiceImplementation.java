@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 @Service
 public class FavouriteBookServiceImplementation implements FavouriteBookService {
@@ -60,7 +59,7 @@ public class FavouriteBookServiceImplementation implements FavouriteBookService 
     @Override
     public FavouriteBookDto updateFavouriteBook(FavouriteBookDto favouritebookDto, Integer id) {
         FavouriteBook updatedFavBook = modelMapper.map(favouritebookDto, FavouriteBook.class);
-        FavouriteBook favouriteBookFromDB = favouriteBookRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find favourite book with specified id=" + id));;
+        FavouriteBook favouriteBookFromDB = favouriteBookRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find favourite book with specified id=" + id));
 
         favouriteBookFromDB.setBook(updatedFavBook.getBook());
         favouriteBookFromDB.setCustomer(updatedFavBook.getCustomer());

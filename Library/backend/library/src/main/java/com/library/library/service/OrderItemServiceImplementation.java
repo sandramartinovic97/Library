@@ -11,6 +11,7 @@ import com.library.library.model.OrderItem;
 import com.library.library.repository.BookOrderRepository;
 import com.library.library.repository.BookRepository;
 import com.library.library.repository.OrderItemRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,12 +28,18 @@ public class OrderItemServiceImplementation implements OrderItemService {
     @Autowired
     private BookOrderRepository bookOrderRepository;
 
+    private ModelMapper modelMapper = new ModelMapper();
+
     @Override
     public Collection<OrderItemDto> getAllItems() {
         Collection<OrderItem> orderItems = orderItemRepository.findAll();
         Collection<OrderItemDto> orderItemsDto = new ArrayList<>();
+        OrderItemDto orderItemDto = new OrderItemDto();
         for (OrderItem orderItem : orderItems) {
-            orderItemsDto.add(entityToDto(orderItem));
+            orderItemDto = entityToDto(orderItem);
+            orderItemDto.setBookOrderDto(bookOrderEntityToDto(orderItem.getOrder()));
+            orderItemDto.setBookDto(bookEntityToDto(orderItem.getBook()));
+            orderItemsDto.add(orderItemDto);
         }
         return orderItemsDto;
     }
@@ -41,6 +48,8 @@ public class OrderItemServiceImplementation implements OrderItemService {
     public OrderItemDto getItemById(Integer id) {
         OrderItem orderItem = orderItemRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find order item with specified id=" + id));
         OrderItemDto orderItemDto = entityToDto(orderItem);
+        orderItemDto.setBookOrderDto(bookOrderEntityToDto(orderItem.getOrder()));
+        orderItemDto.setBookDto(bookEntityToDto(orderItem.getBook()));
         return orderItemDto;
     }
 
@@ -105,6 +114,7 @@ public class OrderItemServiceImplementation implements OrderItemService {
         bookDto.setBookPublisher(book.getBookPublisher());
         bookDto.setBookYear(book.getBookYear());
         bookDto.setBookQuantity(book.getBookQuantity());
+        bookDto.setBookCover(book.getBookCover());
         return bookDto;
     }
 
@@ -119,6 +129,7 @@ public class OrderItemServiceImplementation implements OrderItemService {
         book.setBookPublisher(bookDto.getBookPublisher());
         book.setBookYear(bookDto.getBookYear());
         book.setBookQuantity(bookDto.getBookQuantity());
+        book.setBookCover(bookDto.getBookCover());
         return book;
     }
 
@@ -144,7 +155,7 @@ public class OrderItemServiceImplementation implements OrderItemService {
 
     private CustomerDto customerEntityToDto(Customer customer) {
         CustomerDto customerDto = new CustomerDto();
-       // customerDto.setId(customer.getId());
+        customerDto.setId(customer.getId());
         customerDto.setCustomerName(customer.getCustomerName());
         customerDto.setCustomerSurname(customer.getCustomerSurname());
         customerDto.setCustomerGender(customer.getCustomerGender());
@@ -159,7 +170,7 @@ public class OrderItemServiceImplementation implements OrderItemService {
 
     private Customer customerDtoToEntity(CustomerDto customerDto) {
         Customer customer = new Customer();
-      //  customer.setId(customerDto.getId());
+        customer.setId(customerDto.getId());
         customer.setCustomerName(customerDto.getCustomerName());
         customer.setCustomerSurname(customerDto.getCustomerSurname());
         customer.setCustomerGender(customerDto.getCustomerGender());

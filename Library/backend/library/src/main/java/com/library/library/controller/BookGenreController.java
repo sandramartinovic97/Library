@@ -1,7 +1,6 @@
 package com.library.library.controller;
 
 import com.library.library.dto.BookGenreDto;
-import com.library.library.model.BookGenre;
 import com.library.library.service.BookGenreService;
 
 import org.springframework.beans.factory.annotation.Autowired;

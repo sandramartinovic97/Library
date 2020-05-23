@@ -4,6 +4,7 @@ package com.library.library.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Clob;
 
 @Data
 @Entity
@@ -28,6 +29,9 @@ public class Book {
     private Double bookPrice;
     @Column
     private Integer bookQuantity;
+    @Column
+    @Lob
+    private String bookCover;
 
 }
 

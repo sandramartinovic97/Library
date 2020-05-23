@@ -1,7 +1,6 @@
 package com.library.library.service;
 
 import com.library.library.dto.CustomerDto;
-import com.library.library.model.Customer;
 
 import java.util.Collection;
 

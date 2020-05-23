@@ -67,7 +67,7 @@ public class CustomerServiceImplementation implements  CustomerService{
     @Override
     public CustomerDto updateCustomer(CustomerDto customerDto, Integer id) {
         Customer updatedCustomer = modelMapper.map(customerDto, Customer.class);
-        Customer customerFromDB=customerRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find customer with specified id=" + id));;
+        Customer customerFromDB=customerRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find customer with specified id=" + id));
         customerFromDB.setCustomerName(updatedCustomer.getCustomerName());
         customerFromDB.setCustomerSurname(updatedCustomer.getCustomerSurname());
         customerFromDB.setCustomerGender(updatedCustomer.getCustomerGender());

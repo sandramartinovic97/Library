@@ -1,7 +1,6 @@
 package com.library.library.controller;
 
 import com.library.library.dto.OrderItemDto;
-import com.library.library.model.OrderItem;
 import com.library.library.service.OrderItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

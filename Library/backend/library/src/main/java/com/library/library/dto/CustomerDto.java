@@ -1,6 +1,5 @@
 package com.library.library.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data

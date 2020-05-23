@@ -2,6 +2,8 @@ package com.library.library.dto;
 
 import lombok.Data;
 
+import java.sql.Clob;
+
 @Data
 public class BookDto {
     private Integer id;
@@ -13,4 +15,5 @@ public class BookDto {
     private Integer bookYear;
     private Double bookPrice;
     private Integer bookQuantity;
+    private String bookCover;
 }

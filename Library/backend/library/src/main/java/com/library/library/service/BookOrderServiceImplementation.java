@@ -6,6 +6,7 @@ import com.library.library.model.BookOrder;
 import com.library.library.model.Customer;
 import com.library.library.repository.BookOrderRepository;
 import com.library.library.repository.CustomerRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,8 @@ public class BookOrderServiceImplementation implements BookOrderService {
     @Autowired
     private BookOrderRepository bookOrderRepository;
 
+    private ModelMapper modelMapper = new ModelMapper();
+
     @Autowired
     private CustomerRepository customerRepository;
 
@@ -25,8 +28,10 @@ public class BookOrderServiceImplementation implements BookOrderService {
     public Collection<BookOrderDto> getAllOrders() {
         Collection<BookOrder> bookOrders = bookOrderRepository.findAll();
         Collection<BookOrderDto> bookOrdersDto = new ArrayList<>();
+        BookOrderDto bookOrderDto = new BookOrderDto();
         for (BookOrder bookOrder : bookOrders) {
-            BookOrderDto bookOrderDto = entityToDto(bookOrder);
+            bookOrderDto = modelMapper.map(bookOrder, BookOrderDto.class);
+            bookOrderDto.setCustomerDto(modelMapper.map(bookOrder.getCustomer(), CustomerDto.class));
             bookOrdersDto.add(bookOrderDto);
         }
         return bookOrdersDto;
@@ -35,7 +40,8 @@ public class BookOrderServiceImplementation implements BookOrderService {
     @Override
     public BookOrderDto getOrderById(Integer id) {
         BookOrder bookOrder = bookOrderRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find book order with specified id=" + id));
-        BookOrderDto bookOrderDto = entityToDto(bookOrder);
+        BookOrderDto bookOrderDto = modelMapper.map(bookOrder, BookOrderDto.class);
+        bookOrderDto.setCustomerDto(modelMapper.map(bookOrder.getCustomer(), CustomerDto.class));
         return bookOrderDto;
     }
 
@@ -47,27 +53,27 @@ public class BookOrderServiceImplementation implements BookOrderService {
     @Override
     public BookOrderDto postOrder(BookOrderDto bookOrderDto) {
         Customer customer = customerRepository.findById(bookOrderDto.getCustomerDto().getId()).orElseThrow(() -> new EntityNotFoundException("Could not find specified customer"));
-        bookOrderDto.setCustomerDto(customerEntityToDto(customer));
-        BookOrder bookOrder = dtoToEntity(bookOrderDto);
+        bookOrderDto.setCustomerDto(modelMapper.map(customer, CustomerDto.class));
+        BookOrder bookOrder = modelMapper.map(bookOrderDto, BookOrder.class);
         BookOrder bookOrderSaved = bookOrderRepository.save(bookOrder);
-        BookOrderDto bookOrderDtoSaved = entityToDto(bookOrderSaved);
+        BookOrderDto bookOrderDtoSaved = modelMapper.map(bookOrderSaved, BookOrderDto.class);
         return bookOrderDtoSaved;
     }
 
     @Override
     public BookOrderDto updateOrder(BookOrderDto bookOrderDto, Integer id) {
-        BookOrder updatedBookOrder = dtoToEntity(bookOrderDto);
+        BookOrder updatedBookOrder = modelMapper.map(bookOrderDto, BookOrder.class);
         BookOrder bookOrderFromDB = bookOrderRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find book order with specified id=" + id));
         bookOrderFromDB.setOrderDate(updatedBookOrder.getOrderDate());
         bookOrderFromDB.setOrderPrice(updatedBookOrder.getOrderPrice());
         bookOrderFromDB.setOrderStatus(updatedBookOrder.getOrderStatus());
         bookOrderFromDB.setCustomer(updatedBookOrder.getCustomer());
         BookOrder bookOrderSaved = bookOrderRepository.save(bookOrderFromDB);
-        BookOrderDto bookOrderDto1 = entityToDto(bookOrderSaved);
+        BookOrderDto bookOrderDto1 = modelMapper.map(bookOrderSaved, BookOrderDto.class);
         return bookOrderDto1;
     }
 
-    private BookOrderDto entityToDto(BookOrder bookOrder) {
+    /*private BookOrderDto entityToDto(BookOrder bookOrder) {
         BookOrderDto bookOrderDto = new BookOrderDto();
         bookOrderDto.setId(bookOrder.getId());
         bookOrderDto.setOrderDate(bookOrder.getOrderDate());
@@ -115,5 +121,5 @@ public class BookOrderServiceImplementation implements BookOrderService {
         customer.setCustomerStreet(customerDto.getCustomerStreet());
         customer.setCustomerPassword(customerDto.getCustomerPassword());
         return customer;
-    }
+    }*/
 }

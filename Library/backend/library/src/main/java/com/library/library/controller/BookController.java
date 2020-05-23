@@ -1,7 +1,6 @@
 package com.library.library.controller;
 
 import com.library.library.dto.BookDto;
-import com.library.library.model.Book;
 import com.library.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
