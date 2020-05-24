@@ -12,6 +12,7 @@ import java.util.Collection;
 
 @RestController
 @RequestMapping("/bookGenre")
+@CrossOrigin(origins = "http://localhost:4200")
 public class BookGenreController {
 
     @Autowired

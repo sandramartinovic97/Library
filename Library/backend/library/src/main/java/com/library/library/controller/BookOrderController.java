@@ -9,6 +9,7 @@ import java.util.Collection;
 
 @RestController
 @RequestMapping("/orders")
+@CrossOrigin(origins = "http://localhost:4200")
 public class BookOrderController {
     @Autowired
     private BookOrderService bookOrderService;
