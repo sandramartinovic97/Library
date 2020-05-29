@@ -1,35 +1,37 @@
 insert into Admin (admin_username, admin_email, admin_password) values ('admin', 'admin@gmail.com', 'admin123');
 
+insert into Role (role) values ('admin'),('regular');
+
 insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num,
-                        customer_email,customer_country,customer_city,customer_street,customer_password)
-values ('Marko','Marković','m','+38162564736','mmarkovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobođenja bb','marko');
+                        customer_email,customer_country,customer_city,customer_street,customer_password,role_id)
+values ('Marko','Marković','m','+38162564736','mmarkovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobođenja bb','marko',1);
 insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num,
-                        customer_email,customer_country,customer_city,customer_street,customer_password)
-values ('Petar','Petrović','m','+38163444736','ppetrovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobođenja bb','petar');
+                        customer_email,customer_country,customer_city,customer_street,customer_password,role_id)
+values ('Petar','Petrović','m','+38163444736','ppetrovic@gmail.com','Serbia','Novi Sad','Bulevar Oslobođenja bb','petar',2);
 insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num,
-                        customer_email,customer_country,customer_city,customer_street,customer_password)
-values ('Milica','Mitrović','z','+38164258146','mmitrovic@gmail.com','Serbia','Beograd','Knez Mihajlova 23','milica');
+                        customer_email,customer_country,customer_city,customer_street,customer_password,role_id)
+values ('Milica','Mitrović','z','+38164258146','mmitrovic@gmail.com','Serbia','Beograd','Knez Mihajlova 23','milica',2);
 insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num,
-                        customer_email,customer_country,customer_city,customer_street,customer_password)
-values ('Nataša','Petrović','z','+381668963254','natasa.pet@gmail.com','Serbia','Novi Sad','Jevrejska 5','natasa');
+                        customer_email,customer_country,customer_city,customer_street,customer_password,role_id)
+values ('Nataša','Petrović','z','+381668963254','natasa.pet@gmail.com','Serbia','Novi Sad','Jevrejska 5','natasa',2);
 insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num,
-                        customer_email,customer_country,customer_city,customer_street,customer_password)
-values ('Milan','Nikolić','m','+381614526895','nikolicmilan@gmail.com','Serbia','Subotica','Banijska 17','milan');
+                        customer_email,customer_country,customer_city,customer_street,customer_password,role_id)
+values ('Milan','Nikolić','m','+381614526895','nikolicmilan@gmail.com','Serbia','Subotica','Banijska 17','milan',2);
 insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num,
-                        customer_email,customer_country,customer_city,customer_street,customer_password)
-values ('Sanja','Matić','z','+381635795168','matics@gmail.com','Serbia','Beograd','Balkanska 11','sanja');
+                        customer_email,customer_country,customer_city,customer_street,customer_password,role_id)
+values ('Sanja','Matić','z','+381635795168','matics@gmail.com','Serbia','Beograd','Balkanska 11','sanja',2);
 insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num,
-                        customer_email,customer_country,customer_city,customer_street,customer_password)
-values ('Zorana','Ilić','z','+38164126894','zoranailic@gmail.com','Serbia','Sombor','Rade Končara 17','zorana');
+                        customer_email,customer_country,customer_city,customer_street,customer_password,role_id)
+values ('Zorana','Ilić','z','+38164126894','zoranailic@gmail.com','Serbia','Sombor','Rade Končara 17','zorana',2);
 insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num,
-                        customer_email,customer_country,customer_city,customer_street,customer_password)
-values ('Ana','Anić','z','+381605896496','ana.anic@gmail.com','Serbia','Beograd','Pavla Pavlovića 112','ana');
+                        customer_email,customer_country,customer_city,customer_street,customer_password,role_id)
+values ('Ana','Anić','z','+381605896496','ana.anic@gmail.com','Serbia','Beograd','Pavla Pavlovića 112','ana',2);
 insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num,
-                        customer_email,customer_country,customer_city,customer_street,customer_password)
-values ('Milena','Matić','z','+381628463169','maticmilena@gmail.com','Serbia','Novi Sad','Bulevar Evrope 89','milena');
+                        customer_email,customer_country,customer_city,customer_street,customer_password,role_id)
+values ('Milena','Matić','z','+381628463169','maticmilena@gmail.com','Serbia','Novi Sad','Bulevar Evrope 89','milena',2);
 insert into Customer (customer_name,customer_surname,customer_gender,customer_phone_num,
-                        customer_email,customer_country,customer_city,customer_street,customer_password)
-values ('Nikola','Ilić','m','+38163579961','nikolailic5@gmail.com','Serbia','Kraljevo','Dušana Popovića 7','nikola');
+                        customer_email,customer_country,customer_city,customer_street,customer_password,role_id)
+values ('Nikola','Ilić','m','+38163579961','nikolailic5@gmail.com','Serbia','Kraljevo','Dušana Popovića 7','nikola',2);
 
 insert into Book (book_name, book_author, book_description, book_publisher, book_language, book_year, book_price, book_quantity, book_cover)
 values ('The Great Gatsby', 'F. Scott Fitzgerald',

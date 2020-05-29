@@ -1,4 +1,5 @@
 package com.library.library.model;
+import com.library.library.model.Role;
 
 import lombok.Data;
 
@@ -29,6 +30,9 @@ public class Customer {
     private String customerStreet;
     @Column()
     private String customerPassword;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
+    private Role role;
 
 }
 
