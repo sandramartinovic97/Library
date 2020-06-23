@@ -30,8 +30,8 @@ public class BookOrderController {
     }
 
     @PostMapping()
-    public void postOrder(@RequestBody BookOrderDto orderDto) {
-        bookOrderService.postOrder(orderDto);
+    public BookOrderDto postOrder(@RequestBody BookOrderDto orderDto) {
+        return bookOrderService.postOrder(orderDto);
     }
 
     @PutMapping("/{id}")
