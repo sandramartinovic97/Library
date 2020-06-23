@@ -17,6 +17,8 @@ public class Customer {
     @Column()
     private String customerSurname;
     @Column()
+    private String customerUsername;
+    @Column()
     private String customerGender;
     @Column()
     private String customerPhoneNum;

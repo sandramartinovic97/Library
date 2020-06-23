@@ -9,6 +9,7 @@ public class CustomerDto {
 
     private String customerName;
     private String customerSurname;
+    private String customerUsername;
     private String customerGender;
     private String customerPhoneNum;
     private String customerEmail;
