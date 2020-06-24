@@ -1,6 +1,7 @@
 package com.library.library.dto;
 
 import lombok.Data;
+import org.springframework.lang.Nullable;
 
 @Data
 public class OrderItemDto {
@@ -9,4 +10,5 @@ public class OrderItemDto {
     private BookDto bookDto;
     private Double itemPrice;
     private Integer itemQuantity;
+    private Integer customerId;
 }

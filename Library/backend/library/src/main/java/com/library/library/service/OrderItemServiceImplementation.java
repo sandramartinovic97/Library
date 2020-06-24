@@ -37,7 +37,9 @@ public class OrderItemServiceImplementation implements OrderItemService {
         OrderItemDto orderItemDto = new OrderItemDto();
         for (OrderItem orderItem : orderItems) {
             orderItemDto = entityToDto(orderItem);
-            orderItemDto.setBookOrderDto(bookOrderEntityToDto(orderItem.getOrder()));
+            if (orderItem.getOrder() != null) {
+                orderItemDto.setBookOrderDto(bookOrderEntityToDto(orderItem.getOrder()));
+            }
             orderItemDto.setBookDto(bookEntityToDto(orderItem.getBook()));
             orderItemsDto.add(orderItemDto);
         }
@@ -57,8 +59,10 @@ public class OrderItemServiceImplementation implements OrderItemService {
     public OrderItemDto postItem(OrderItemDto orderItemDto) {
         Book book = bookRepository.findById(orderItemDto.getBookDto().getId()).orElseThrow(() -> new EntityNotFoundException("Could not find book"));
         orderItemDto.setBookDto(bookEntityToDto(book));
-        BookOrder order = bookOrderRepository.findById(orderItemDto.getBookOrderDto().getId()).orElseThrow(() -> new EntityNotFoundException("Could not find order"));
-        orderItemDto.setBookOrderDto(bookOrderEntityToDto(order));
+        if(orderItemDto.getBookOrderDto() != null) {
+            BookOrder order = bookOrderRepository.findById(orderItemDto.getBookOrderDto().getId()).orElseThrow(() -> new EntityNotFoundException("Could not find order"));
+            orderItemDto.setBookOrderDto(bookOrderEntityToDto(order));
+        }
         OrderItem orderItem = dtoToEntity(orderItemDto);
         OrderItem orderItemSaved = orderItemRepository.save(orderItem);
         OrderItemDto orderItemDtoSaved = entityToDto(orderItemSaved);
@@ -87,9 +91,12 @@ public class OrderItemServiceImplementation implements OrderItemService {
         OrderItemDto orderItemDto = new OrderItemDto();
         orderItemDto.setId(orderItem.getId());
         orderItemDto.setBookDto(bookEntityToDto(orderItem.getBook()));
-        orderItemDto.setBookOrderDto(bookOrderEntityToDto(orderItem.getOrder()));
+        if(orderItem.getOrder() != null) {
+            orderItemDto.setBookOrderDto(bookOrderEntityToDto(orderItem.getOrder()));
+        }
         orderItemDto.setItemPrice(orderItem.getItemPrice());
         orderItemDto.setItemQuantity(orderItem.getItemQuantity());
+        orderItemDto.setCustomerId(orderItem.getCustomerId());
         return orderItemDto;
     }
 
@@ -97,9 +104,12 @@ public class OrderItemServiceImplementation implements OrderItemService {
         OrderItem orderItem = new OrderItem();
         orderItem.setId(orderItemDto.getId());
         orderItem.setBook(bookDtoToEntity(orderItemDto.getBookDto()));
-        orderItem.setOrder(bookOrderDtoToEntity(orderItemDto.getBookOrderDto()));
+        if (orderItemDto.getBookOrderDto()!= null) {
+            orderItem.setOrder(bookOrderDtoToEntity(orderItemDto.getBookOrderDto()));
+        }
         orderItem.setItemPrice(orderItemDto.getItemPrice());
         orderItem.setItemQuantity(orderItemDto.getItemQuantity());
+        orderItem.setCustomerId(orderItemDto.getCustomerId());
         return orderItem;
     }
 

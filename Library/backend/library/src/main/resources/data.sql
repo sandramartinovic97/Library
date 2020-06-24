@@ -148,8 +148,8 @@ insert into Book_Order (order_date,order_price,order_status,customer_id) values 
 insert into Book_Order (order_date,order_price,order_status,customer_id) values (parsedatetime('05-02-2018 08:11:24.400', 'dd-MM-yyyy hh:mm:ss.SS'), 320,'Delivered',3);
 insert into Book_Order (order_date,order_price,order_status,customer_id) values (parsedatetime('31-01-2020 11:27:55.620', 'dd-MM-yyyy hh:mm:ss.SS'), 450,'Delivered',5);
 
-insert into Order_Item (order_id, book_id, item_price, item_quantity) values (1,1,1000.00,2);
-insert into Order_Item (order_id, book_id, item_price, item_quantity) values (2,2,900.00,1);
-insert into Order_Item (order_id, book_id, item_price, item_quantity) values (3,1,700.00,1);
-insert into Order_Item (order_id, book_id, item_price, item_quantity) values (4,11,840.00,1);
-insert into Order_Item (order_id, book_id, item_price, item_quantity) values (5,6,1000.00,2);
+insert into Order_Item (order_id, book_id, item_price, item_quantity, customer_id) values (1,1,1000.00,2,1);
+insert into Order_Item (order_id, book_id, item_price, item_quantity, customer_id) values (2,2,900.00,1,2);
+insert into Order_Item (order_id, book_id, item_price, item_quantity, customer_id) values (3,1,700.00,1,3);
+insert into Order_Item (order_id, book_id, item_price, item_quantity, customer_id) values (4,11,840.00,1,4);
+insert into Order_Item (order_id, book_id, item_price, item_quantity, customer_id) values (5,6,1000.00,2,5);
