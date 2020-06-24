@@ -11,4 +11,5 @@ public interface CustomerService {
     public void deleteCustomerById(Integer id);
     public CustomerDto insertCustomer(CustomerDto customer);
     public CustomerDto updateCustomer(CustomerDto customer,Integer id);
+    public CustomerDto getCustomerByUsername(String username);
 }

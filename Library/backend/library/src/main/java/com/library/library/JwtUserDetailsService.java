@@ -24,10 +24,9 @@ public class JwtUserDetailsService implements UserDetailsService {
         Customer user = customerRepository.findByCustomerUsername(username).orElseThrow(() ->
                 new UsernameNotFoundException("User not found with username: " + username)
         );
-        List<GrantedAuthority> authorityList = AuthorityUtils.commaSeparatedStringToAuthorityList(user.getRole().getRole());
         if (username.equals(user.getCustomerUsername())) {
             return new User(user.getCustomerUsername(), user.getCustomerPassword(),
-                    authorityList);
+                    new ArrayList<>());
         } else {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }

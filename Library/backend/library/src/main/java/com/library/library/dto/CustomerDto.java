@@ -17,4 +17,5 @@ public class CustomerDto {
     private String customerCity;
     private String customerStreet;
     private String customerPassword;
+    private RoleDto roleDto;
 }

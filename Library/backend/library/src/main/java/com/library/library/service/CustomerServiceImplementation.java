@@ -1,6 +1,8 @@
 package com.library.library.service;
 
+import com.library.library.dto.BookDto;
 import com.library.library.dto.CustomerDto;
+import com.library.library.dto.RoleDto;
 import com.library.library.model.Customer;
 import com.library.library.repository.CustomerRepository;
 import org.modelmapper.ModelMapper;
@@ -30,6 +32,7 @@ public class CustomerServiceImplementation implements  CustomerService{
         Collection<CustomerDto> customersDtos = new ArrayList<>();
         for (Customer customer : customers) {
             CustomerDto customerDto = modelMapper.map(customer, CustomerDto.class);
+            customerDto.setRoleDto(modelMapper.map(customer.getRole(), RoleDto.class));
             customersDtos.add(customerDto);
         }
         return customersDtos;
@@ -38,8 +41,9 @@ public class CustomerServiceImplementation implements  CustomerService{
     @Override
     public CustomerDto getCustomerById(Integer id) {
         Customer customer = customerRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find customer with specified id="+id));
-        return modelMapper.map(customer, CustomerDto.class);
-
+        CustomerDto customerDto = modelMapper.map(customer, CustomerDto.class);
+        customerDto.setRoleDto(modelMapper.map(customer.getRole(), RoleDto.class));
+        return customerDto;
     }
 
     @Override
@@ -77,7 +81,16 @@ public class CustomerServiceImplementation implements  CustomerService{
         customerFromDB.setCustomerCity(updatedCustomer.getCustomerCity());
         customerFromDB.setCustomerStreet(updatedCustomer.getCustomerStreet());
         customerFromDB.setCustomerPassword(updatedCustomer.getCustomerPassword());
+        customerFromDB.setRole(updatedCustomer.getRole());
         return modelMapper.map(customerRepository.save(customerFromDB), CustomerDto.class);
+    }
+
+    @Override
+    public CustomerDto getCustomerByUsername(String username) {
+        Customer customer = customerRepository.findByCustomerUsername(username).orElseThrow(()-> new EntityNotFoundException("Could not find customer with specified username"));
+        CustomerDto customerDto = modelMapper.map(customer, CustomerDto.class);
+        customerDto.setRoleDto(modelMapper.map(customer.getRole(), RoleDto.class));
+        return customerDto;
     }
 
 
