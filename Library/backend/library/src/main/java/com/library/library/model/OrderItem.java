@@ -1,6 +1,7 @@
 package com.library.library.model;
 
 import lombok.Data;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 
@@ -20,4 +21,6 @@ public class OrderItem {
     private Double itemPrice;
     @Column
     private Integer itemQuantity;
+    @Column
+    private Integer customerId;
 }
