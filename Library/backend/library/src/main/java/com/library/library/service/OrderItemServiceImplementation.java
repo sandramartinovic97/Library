@@ -56,6 +56,22 @@ public class OrderItemServiceImplementation implements OrderItemService {
     }
 
     @Override
+    public Collection<OrderItemDto> getItemByCustomerId(Integer customerId){
+        Collection<OrderItem> orderItems = orderItemRepository.findByCustomerId(customerId);
+        Collection<OrderItemDto> orderItemsDto = new ArrayList<>();
+        OrderItemDto orderItemDto = new OrderItemDto();
+        for (OrderItem orderItem : orderItems) {
+            orderItemDto = entityToDto(orderItem);
+            if (orderItem.getOrder() != null) {
+                orderItemDto.setBookOrderDto(bookOrderEntityToDto(orderItem.getOrder()));
+            }
+            orderItemDto.setBookDto(bookEntityToDto(orderItem.getBook()));
+            orderItemsDto.add(orderItemDto);
+        }
+        return orderItemsDto;
+    }
+
+    @Override
     public OrderItemDto postItem(OrderItemDto orderItemDto) {
         Book book = bookRepository.findById(orderItemDto.getBookDto().getId()).orElseThrow(() -> new EntityNotFoundException("Could not find book"));
         orderItemDto.setBookDto(bookEntityToDto(book));

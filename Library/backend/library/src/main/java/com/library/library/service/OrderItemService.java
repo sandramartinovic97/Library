@@ -9,6 +9,8 @@ public interface OrderItemService {
 
     public OrderItemDto getItemById(Integer id);
 
+    public Collection<OrderItemDto> getItemByCustomerId(Integer customerId);
+
     public OrderItemDto postItem(OrderItemDto orderItemDto);
 
     public void deleteItem(Integer id);
