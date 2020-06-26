@@ -24,6 +24,11 @@ public class OrderItemController {
         return orderItemService.getItemById(id);
     }
 
+    @GetMapping("/getItemByCustomer")
+    public Collection<OrderItemDto> getItemByCustomerId(@RequestParam("customerId") Integer customerId) {
+        return orderItemService.getItemByCustomerId(customerId);
+    }
+
     @PostMapping
     public void postItem(@RequestBody OrderItemDto orderItemDto) {
         orderItemService.postItem(orderItemDto);
