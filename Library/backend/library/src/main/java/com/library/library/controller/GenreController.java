@@ -28,20 +28,17 @@ public class GenreController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createGenre(@RequestBody GenreDto genreDto) {
+    public void createGenre(@RequestBody GenreDto genreDto) {
         genreService.createGenre(genreDto);
-        return ResponseEntity.status(HttpStatus.OK).body("New genre is created.");
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateGenre(@PathVariable("id") Integer id, @RequestBody GenreDto genreDto) {
+    public void updateGenre(@PathVariable("id") Integer id, @RequestBody GenreDto genreDto) {
         genreService.updateGenre(id, genreDto);
-        return ResponseEntity.status(HttpStatus.OK).body("Genre with id=" + id + " is updated.");
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteGenre(@PathVariable("id") Integer id) {
+    public void deleteGenre(@PathVariable("id") Integer id) {
         genreService.deleteGenre(id);
-        return ResponseEntity.status(HttpStatus.OK).body("Genre with id=" + id + " is deleted.");
     }
 }

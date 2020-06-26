@@ -28,22 +28,17 @@ public class BookController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteBook(@PathVariable("id") Integer id) {
-
+    public void deleteBook(@PathVariable("id") Integer id) {
         bookService.deleteBook(id);
-        return ResponseEntity.status(HttpStatus.OK).body("The book is deleted.");
     }
 
     @PostMapping
-    public ResponseEntity<String> postBook(@RequestBody BookDto bookDto){
+    public void postBook(@RequestBody BookDto bookDto){
         bookService.postBook(bookDto);
-        return ResponseEntity.status(HttpStatus.OK).body("New book is created.");
-
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> putBook(@RequestBody BookDto bookDto, @PathVariable("id") Integer id){
+    public void putBook(@RequestBody BookDto bookDto, @PathVariable("id") Integer id){
         bookService.updateBook(bookDto,id);
-        return ResponseEntity.status(HttpStatus.OK).body("The book is updated.");
     }
 }
