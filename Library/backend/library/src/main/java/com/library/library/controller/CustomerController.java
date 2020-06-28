@@ -41,7 +41,7 @@ public class CustomerController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public CustomerDto insertCustomer(@RequestBody CustomerDto customer) {
         return customerService.insertCustomer(customer);
     }
