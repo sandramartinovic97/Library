@@ -72,6 +72,20 @@ public class BookGenreImplementation implements BookGenreService{
         return bookGenreUpdatedDto;
     }
 
+    @Override
+    public Collection<BookGenreDto> getBooksByGenre(GenreDto genreDto) {
+        Collection<BookGenre> bookGenres = bookGenreRepository.findByGenre(genreDto).orElseThrow(()-> new EntityNotFoundException("Could not find book by specified genre"));
+        Collection<BookGenreDto> bookGenresDto = new ArrayList<>();
+        BookGenreDto bookGenreDto=new BookGenreDto();
+        for (BookGenre bookGenre : bookGenres) {
+            bookGenreDto=modelMapper.map(bookGenre, BookGenreDto.class);
+            bookGenreDto.setGenreDto(modelMapper.map(bookGenre.getGenre(), GenreDto.class));
+            bookGenreDto.setBookDto(modelMapper.map(bookGenre.getBook(), BookDto.class));
+            bookGenresDto.add(bookGenreDto);
+        }
+        return bookGenresDto;
+    }
+
    /* private BookGenreDto entityToDto(BookGenre bookGenre) {
         BookGenreDto bookGenreDto = new BookGenreDto();
         bookGenreDto.setId(bookGenre.getId());
