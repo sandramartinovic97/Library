@@ -1,5 +1,6 @@
 package com.library.library.service;
 
+import com.library.library.dto.BookDto;
 import com.library.library.dto.BookGenreDto;
 import com.library.library.dto.GenreDto;
 
@@ -17,5 +18,5 @@ public interface BookGenreService {
 
     public BookGenreDto updateBookGenre(BookGenreDto bookGenreDto, Integer id);
 
-    public Collection<BookGenreDto> getBooksByGenre(GenreDto genreDto);
+    public Collection<BookDto> getBooksByGenre(Integer genreId);
 }

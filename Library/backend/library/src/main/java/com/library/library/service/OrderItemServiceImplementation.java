@@ -1,13 +1,7 @@
 package com.library.library.service;
 
-import com.library.library.dto.BookDto;
-import com.library.library.dto.BookOrderDto;
-import com.library.library.dto.CustomerDto;
-import com.library.library.dto.OrderItemDto;
-import com.library.library.model.Book;
-import com.library.library.model.BookOrder;
-import com.library.library.model.Customer;
-import com.library.library.model.OrderItem;
+import com.library.library.dto.*;
+import com.library.library.model.*;
 import com.library.library.repository.BookOrderRepository;
 import com.library.library.repository.BookRepository;
 import com.library.library.repository.OrderItemRepository;
@@ -184,6 +178,7 @@ public class OrderItemServiceImplementation implements OrderItemService {
         customerDto.setId(customer.getId());
         customerDto.setCustomerName(customer.getCustomerName());
         customerDto.setCustomerSurname(customer.getCustomerSurname());
+        customerDto.setCustomerUsername(customer.getCustomerUsername());
         customerDto.setCustomerGender(customer.getCustomerGender());
         customerDto.setCustomerPhoneNum(customer.getCustomerPhoneNum());
         customerDto.setCustomerEmail(customer.getCustomerEmail());
@@ -191,6 +186,7 @@ public class OrderItemServiceImplementation implements OrderItemService {
         customerDto.setCustomerCity(customer.getCustomerCity());
         customerDto.setCustomerStreet(customer.getCustomerStreet());
         customerDto.setCustomerPassword(customer.getCustomerPassword());
+        customerDto.setRoleDto(roleToRoleDto(customer.getRole()));
         return customerDto;
     }
 
@@ -199,6 +195,7 @@ public class OrderItemServiceImplementation implements OrderItemService {
         customer.setId(customerDto.getId());
         customer.setCustomerName(customerDto.getCustomerName());
         customer.setCustomerSurname(customerDto.getCustomerSurname());
+        customer.setCustomerUsername(customerDto.getCustomerUsername());
         customer.setCustomerGender(customerDto.getCustomerGender());
         customer.setCustomerPhoneNum(customerDto.getCustomerPhoneNum());
         customer.setCustomerEmail(customerDto.getCustomerEmail());
@@ -206,6 +203,21 @@ public class OrderItemServiceImplementation implements OrderItemService {
         customer.setCustomerCity(customerDto.getCustomerCity());
         customer.setCustomerStreet(customerDto.getCustomerStreet());
         customer.setCustomerPassword(customerDto.getCustomerPassword());
+        customer.setRole(roleDtoToRole(customerDto.getRoleDto()));
         return customer;
+    }
+
+    private Role roleDtoToRole(RoleDto roleDto) {
+        Role role = new Role();
+        role.setId(roleDto.getId());
+        role.setRole(roleDto.getRole());
+        return role;
+    }
+
+    private RoleDto roleToRoleDto(Role role) {
+        RoleDto roleDto = new RoleDto();
+        roleDto.setId(role.getId());
+        roleDto.setRole(role.getRole());
+        return roleDto;
     }
 }

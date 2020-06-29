@@ -14,21 +14,24 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @Service
-public class BookGenreImplementation implements BookGenreService{
+public class BookGenreImplementation implements BookGenreService {
 
     @Autowired
     private BookGenreRepository bookGenreRepository;
 
-    private ModelMapper modelMapper=new ModelMapper();
+    private ModelMapper modelMapper = new ModelMapper();
+
+    @Autowired
+    private GenreService genreService;
 
     @Override
     public Collection<BookGenreDto> getAllBookGenre() {
 
         Collection<BookGenre> bookGenres = bookGenreRepository.findAll();
         Collection<BookGenreDto> bookGenresDto = new ArrayList<>();
-        BookGenreDto bookGenreDto=new BookGenreDto();
+        BookGenreDto bookGenreDto = new BookGenreDto();
         for (BookGenre bookGenre : bookGenres) {
-            bookGenreDto=modelMapper.map(bookGenre, BookGenreDto.class);
+            bookGenreDto = modelMapper.map(bookGenre, BookGenreDto.class);
             bookGenreDto.setGenreDto(modelMapper.map(bookGenre.getGenre(), GenreDto.class));
             bookGenreDto.setBookDto(modelMapper.map(bookGenre.getBook(), BookDto.class));
             bookGenresDto.add(bookGenreDto);
@@ -41,7 +44,7 @@ public class BookGenreImplementation implements BookGenreService{
         //preuzima bookgenre iz baze
         BookGenre bookGenre = bookGenreRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find book genre with id=" + id));
         //preuzima book_genre i pretvara u dto
-        BookGenreDto bookGenreDto =modelMapper.map(bookGenre, BookGenreDto.class);
+        BookGenreDto bookGenreDto = modelMapper.map(bookGenre, BookGenreDto.class);
         //postavlja book dto i genre dto u book genre dto
         bookGenreDto.setGenreDto(modelMapper.map(bookGenre.getGenre(), GenreDto.class));
         bookGenreDto.setBookDto(modelMapper.map(bookGenre.getBook(), BookDto.class));
@@ -67,23 +70,29 @@ public class BookGenreImplementation implements BookGenreService{
         BookGenre bookGenreFromDB = bookGenreRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Could not find order item with specified id=" + id));
         bookGenreFromDB.setBook(modelMapper.map(bookGenreDto.getBookDto(), Book.class));
         bookGenreFromDB.setGenre(modelMapper.map(bookGenreDto.getGenreDto(), Genre.class));
-        BookGenre bookGenreUpdated=bookGenreRepository.save(bookGenreFromDB);
+        BookGenre bookGenreUpdated = bookGenreRepository.save(bookGenreFromDB);
         BookGenreDto bookGenreUpdatedDto = modelMapper.map(bookGenreUpdated, BookGenreDto.class);
         return bookGenreUpdatedDto;
     }
 
     @Override
-    public Collection<BookGenreDto> getBooksByGenre(GenreDto genreDto) {
-        Collection<BookGenre> bookGenres = bookGenreRepository.findByGenre(genreDto).orElseThrow(()-> new EntityNotFoundException("Could not find book by specified genre"));
+    public Collection<BookDto> getBooksByGenre(Integer genreId) {
+        GenreDto genreDto = genreService.getGenreById(genreId);
+        Genre genre = modelMapper.map(genreDto, Genre.class);
+        Collection<BookGenre> bookGenres = bookGenreRepository.findByGenre(genre).orElseThrow(() -> new EntityNotFoundException("Could not find book by specified genre"));
         Collection<BookGenreDto> bookGenresDto = new ArrayList<>();
-        BookGenreDto bookGenreDto=new BookGenreDto();
+        BookGenreDto bookGenreDto = new BookGenreDto();
         for (BookGenre bookGenre : bookGenres) {
-            bookGenreDto=modelMapper.map(bookGenre, BookGenreDto.class);
+            bookGenreDto = modelMapper.map(bookGenre, BookGenreDto.class);
             bookGenreDto.setGenreDto(modelMapper.map(bookGenre.getGenre(), GenreDto.class));
             bookGenreDto.setBookDto(modelMapper.map(bookGenre.getBook(), BookDto.class));
             bookGenresDto.add(bookGenreDto);
         }
-        return bookGenresDto;
+        Collection<BookDto> books = new ArrayList<>();
+        for (BookGenreDto item : bookGenresDto) {
+            books.add(item.getBookDto());
+        }
+        return books;
     }
 
    /* private BookGenreDto entityToDto(BookGenre bookGenre) {
