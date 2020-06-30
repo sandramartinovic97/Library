@@ -52,7 +52,7 @@ public class FavouriteBookController {
     }
 
     @GetMapping("/getFavouriteByCustomerAndBook")
-    public FavouriteBookDto getFavouriteByCustomerIdAndBookId(@RequestParam("customerId") Integer customerId, @RequestParam("bookId") Integer bookId) {
+    public FavouriteBookDto getFavouriteByCustomerIdAndBookId(@RequestParam(name="customerId") Integer customerId, @RequestParam(name="bookId") Integer bookId) {
         return favouriteBookService.getFavouriteByCustomerIdAndBookId(customerId, bookId);
     }
 
