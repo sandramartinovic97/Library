@@ -11,4 +11,6 @@ public interface FavouriteBookService {
     public void deleteFavouriteBookById(Integer id);
     public FavouriteBookDto updateFavouriteBook(FavouriteBookDto favouritebook,Integer id);
     public FavouriteBookDto insertFavouriteBook(FavouriteBookDto favouritebook);
+    public Collection<FavouriteBookDto> getFavouriteByCustomerId(Integer customerId);
+    public FavouriteBookDto getFavouriteByCustomerIdAndBookId(Integer customerId, Integer bookId);
 }

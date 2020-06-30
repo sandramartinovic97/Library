@@ -18,7 +18,5 @@ public class FavouriteBook {
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
-
-
 }
 
