@@ -1,9 +1,10 @@
 package com.library.library.service;
 
-import com.library.library.dto.BookDto;
-import com.library.library.dto.CustomerDto;
-import com.library.library.dto.FavouriteBookDto;
+import com.library.library.dto.*;
+import com.library.library.model.Book;
+import com.library.library.model.BookGenre;
 import com.library.library.model.FavouriteBook;
+import com.library.library.model.OrderItem;
 import com.library.library.repository.FavouriteBookRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,4 +76,24 @@ public class FavouriteBookServiceImplementation implements FavouriteBookService 
         return modelMapper.map(favouriteBook, FavouriteBookDto.class);
     }
 
+    @Override
+    public Collection<FavouriteBookDto> getFavouriteByCustomerId(Integer customerId) {
+        Collection<FavouriteBook> favouriteBooks = favouriteBookRepository.findByCustomerId(customerId);
+
+        Collection<FavouriteBookDto> favouriteBookDtos = new ArrayList<>();
+        FavouriteBookDto favouriteBookDto = new FavouriteBookDto();
+        for (FavouriteBook favBook : favouriteBooks) {
+            favouriteBookDto = modelMapper.map(favBook, FavouriteBookDto.class);
+            favouriteBookDto.setBookDto(modelMapper.map(favBook.getBook(), BookDto.class));
+            favouriteBookDto.setCustomerDto(modelMapper.map(favBook.getCustomer(), CustomerDto.class));
+            favouriteBookDtos.add(favouriteBookDto);
+        }
+        return favouriteBookDtos;
+    }
+
+    public FavouriteBookDto getFavouriteByCustomerIdAndBookId(Integer customerId, Integer bookId) {
+        FavouriteBook favouriteBook = favouriteBookRepository.findByCustomerIdAndBookId(customerId, bookId).orElseThrow(() -> new EntityNotFoundException("Could not find favourite book"));
+        FavouriteBookDto favouriteBookDto = modelMapper.map(favouriteBook, FavouriteBookDto.class);
+        return favouriteBookDto;
+    }
 }

@@ -45,4 +45,16 @@ public class FavouriteBookController {
         favouriteBookService.updateFavouriteBook(favouritebook,id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/getFavouriteByCustomer")
+    public Collection<FavouriteBookDto> getFavouriteByCustomerId(@RequestParam("customerId") Integer customerId) {
+        return favouriteBookService.getFavouriteByCustomerId(customerId);
+    }
+
+    @GetMapping("/getFavouriteByCustomerAndBook")
+    public FavouriteBookDto getFavouriteByCustomerIdAndBookId(@RequestParam("customerId") Integer customerId, @RequestParam("bookId") Integer bookId) {
+        return favouriteBookService.getFavouriteByCustomerIdAndBookId(customerId, bookId);
+    }
+
+
 }
