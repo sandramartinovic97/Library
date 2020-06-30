@@ -16149,3 +16149,738 @@ org.springframework.security.access.AccessDeniedException: Access is denied
 2020-06-29 19:27:41.163 DEBUG 19024 --- [http-nio-8083-exec-2] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
 2020-06-29 19:27:41.163 DEBUG 19024 --- [http-nio-8083-exec-2] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@33619f74
 2020-06-29 19:27:41.163 DEBUG 19024 --- [http-nio-8083-exec-2] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 16:46:11.155  INFO 8256 --- [main] com.library.library.LibraryApplication   : Starting LibraryApplication on DESKTOP-0I8U569 with PID 8256 (C:\Users\Sara\Desktop\Agilne-backend\Library\Library\backend\library\target\classes started by Sara in C:\Users\Sara\Desktop\Agilne-backend\Library\Library\backend\library)
+2020-06-30 16:46:11.155  INFO 8256 --- [main] com.library.library.LibraryApplication   : No active profile set, falling back to default profiles: default
+2020-06-30 16:46:12.595  INFO 8256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-30 16:46:12.841  INFO 8256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 216ms. Found 9 JPA repository interfaces.
+2020-06-30 16:46:13.395  INFO 8256 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6b530eb9' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-30 16:46:13.401  INFO 8256 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-30 16:46:13.796  INFO 8256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2020-06-30 16:46:13.806  INFO 8256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-30 16:46:13.807  INFO 8256 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-06-30 16:46:13.944  INFO 8256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-30 16:46:13.945  INFO 8256 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2688 ms
+2020-06-30 16:46:14.017  INFO 8256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-30 16:46:14.199  INFO 8256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-30 16:46:14.199  INFO 8256 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-06-30 16:46:14.409  INFO 8256 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-30 16:46:14.487  INFO 8256 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-06-30 16:46:14.768  INFO 8256 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-30 16:46:14.909  INFO 8256 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-06-30 16:46:16.003  INFO 8256 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-30 16:46:16.019  INFO 8256 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-30 16:46:16.394  WARN 8256 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-30 16:46:16.815 DEBUG 8256 --- [main] eGlobalAuthenticationAutowiredConfigurer : Eagerly initializing {webSecurityConfig=com.library.library.WebSecurityConfig$$EnhancerBySpringCGLIB$$1696a72d@191ec193}
+2020-06-30 16:46:16.894 DEBUG 8256 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/authenticate']
+2020-06-30 16:46:16.894 DEBUG 8256 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/books/**']
+2020-06-30 16:46:16.894 DEBUG 8256 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/customer/register']
+2020-06-30 16:46:16.894 DEBUG 8256 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/bookGenre/getByGenre']
+2020-06-30 16:46:16.894 DEBUG 8256 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/genre']
+2020-06-30 16:46:16.894 DEBUG 8256 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/h2-console/**']
+2020-06-30 16:46:16.894 DEBUG 8256 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/**', OPTIONS]
+2020-06-30 16:46:16.894 DEBUG 8256 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'authenticated', for any request
+2020-06-30 16:46:16.894 DEBUG 8256 --- [main] o.s.s.w.a.i.FilterSecurityInterceptor    : Validated configuration attributes
+2020-06-30 16:46:16.894 DEBUG 8256 --- [main] o.s.s.w.a.i.FilterSecurityInterceptor    : Validated configuration attributes
+2020-06-30 16:46:16.894  INFO 8256 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@cfd5cd2, org.springframework.security.web.context.SecurityContextPersistenceFilter@8f39224, org.springframework.security.web.header.HeaderWriterFilter@362a561e, org.springframework.security.web.authentication.logout.LogoutFilter@3d512652, com.library.library.JwtRequestFilter@571a663c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43e3a390, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11c7a0b4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@762bf32d, org.springframework.security.web.session.SessionManagementFilter@7196a8f1, org.springframework.security.web.access.ExceptionTranslationFilter@1a785fd5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5b322873]
+2020-06-30 16:46:16.909 DEBUG 8256 --- [main] o.s.s.a.i.a.MethodSecurityInterceptor    : Validated configuration attributes
+2020-06-30 16:46:17.065  INFO 8256 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-30 16:46:17.284  INFO 8256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2020-06-30 16:46:17.284  INFO 8256 --- [main] com.library.library.LibraryApplication   : Started LibraryApplication in 6.836 seconds (JVM running for 8.52)
+2020-06-30 17:55:20.075  INFO 8256 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-30 17:55:20.079  INFO 8256 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-30 17:55:20.145  INFO 8256 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 66 ms
+2020-06-30 17:55:20.174 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:55:20.177 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:55:20.174 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:55:20.178 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:55:20.181 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:55:20.181 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:55:20.185 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:55:20.185 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:55:20.186 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:55:20.186 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:55:20.186 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/logout'
+2020-06-30 17:55:20.186 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/logout'
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'POST /logout'
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'POST /logout'
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'PUT /logout'
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'PUT /logout'
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'DELETE /logout'
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:55:20.187 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'DELETE /logout'
+2020-06-30 17:55:20.188 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:55:20.189  WARN 8256 --- [http-nio-8083-exec-1] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:55:20.190 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:55:20.190 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:55:20.188 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:55:20.192 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:55:20.192  WARN 8256 --- [http-nio-8083-exec-2] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:55:20.192 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:55:20.193 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:55:20.193 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:55:20.194 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:55:20.196 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:55:20.196 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:55:20.196 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:55:20.196 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:55:20.196 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:55:20.197 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:55:20.198 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:55:20.199 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:55:20.199 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/authenticate'
+2020-06-30 17:55:20.199 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/books/**'
+2020-06-30 17:55:20.200 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/customer/register'
+2020-06-30 17:55:20.200 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/bookGenre/getByGenre'
+2020-06-30 17:55:20.200 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/genre'
+2020-06-30 17:55:20.201 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /genre; Attributes: [permitAll]
+2020-06-30 17:55:20.201 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:55:20.202 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/authenticate'
+2020-06-30 17:55:20.203 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/books/**'
+2020-06-30 17:55:20.204 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /books; Attributes: [permitAll]
+2020-06-30 17:55:20.204 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:55:20.214 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:55:20.214 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:55:20.215 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:55:20.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:55:20.215 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /genre reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:55:20.215 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:55:20.215 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:55:20.217 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /books reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:55:20.909 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:55:20.909 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:55:20.956 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:55:20.956 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:55:20.956 DEBUG 8256 --- [http-nio-8083-exec-2] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:55:20.956 DEBUG 8256 --- [http-nio-8083-exec-1] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:09.801 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:09.801 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:09.801 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:09.801 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:09.802 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:09.802 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:09.802 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:09.802 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:09.802 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:09.803 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:09.803 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/logout'
+2020-06-30 17:57:09.803 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/logout'
+2020-06-30 17:57:09.803 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:09.803 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:09.803 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'POST /logout'
+2020-06-30 17:57:09.804 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:09.804 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'POST /logout'
+2020-06-30 17:57:09.804 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'PUT /logout'
+2020-06-30 17:57:09.804 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:09.804 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:09.804 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'PUT /logout'
+2020-06-30 17:57:09.804 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'DELETE /logout'
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:09.804 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:09.805  WARN 8256 --- [http-nio-8083-exec-6] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'DELETE /logout'
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:09.805  WARN 8256 --- [http-nio-8083-exec-5] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:09.805 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:09.808 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:09.808 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:09.808 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:09.808 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:09.808 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:09.808 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/authenticate'
+2020-06-30 17:57:09.808 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/books/**'
+2020-06-30 17:57:09.808 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/authenticate'
+2020-06-30 17:57:09.808 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /books; Attributes: [permitAll]
+2020-06-30 17:57:09.808 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/books/**'
+2020-06-30 17:57:09.809 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:09.809 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/customer/register'
+2020-06-30 17:57:09.809 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/bookGenre/getByGenre'
+2020-06-30 17:57:09.809 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:09.810 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/genre'
+2020-06-30 17:57:09.810 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:09.810 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /genre; Attributes: [permitAll]
+2020-06-30 17:57:09.810 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:09.810 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /books reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:09.810 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:09.811 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:09.811 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:09.811 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:09.811 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /genre reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:09.889 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:09.891 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:09.891 DEBUG 8256 --- [http-nio-8083-exec-5] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:09.909 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:09.921 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:09.921 DEBUG 8256 --- [http-nio-8083-exec-6] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:12.481 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/logout'
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'POST /logout'
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'PUT /logout'
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'DELETE /logout'
+2020-06-30 17:57:12.482 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:12.481 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:12.493 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:12.494 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:12.494 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:12.494 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:12.495 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/logout'
+2020-06-30 17:57:12.495 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:12.495 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'POST /logout'
+2020-06-30 17:57:12.495 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:12.495 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'PUT /logout'
+2020-06-30 17:57:12.495 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:12.496 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'DELETE /logout'
+2020-06-30 17:57:12.496 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:12.497  WARN 8256 --- [http-nio-8083-exec-7] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/authenticate'
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/books/**'
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/customer/register'
+2020-06-30 17:57:12.497 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/bookGenre/getByGenre'
+2020-06-30 17:57:12.498 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/genre'
+2020-06-30 17:57:12.498 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /genre; Attributes: [permitAll]
+2020-06-30 17:57:12.498 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:12.498 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:12.498 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:12.483 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:12.498 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:12.502 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /genre reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:12.510 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:12.512 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:12.512 DEBUG 8256 --- [http-nio-8083-exec-7] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:12.515  WARN 8256 --- [http-nio-8083-exec-8] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:12.515 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:12.515 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:12.516 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:12.516 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:12.516 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:12.516 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:12.516 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:12.516 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/authenticate'
+2020-06-30 17:57:12.516 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/books/**'
+2020-06-30 17:57:12.516 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /books; Attributes: [permitAll]
+2020-06-30 17:57:12.517 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:12.519 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:12.519 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:12.519 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:12.519 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /books reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:12.537 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:12.546 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:12.546 DEBUG 8256 --- [http-nio-8083-exec-8] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:21.848 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:21.849 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:21.849 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:21.849 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:21.849 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:21.849 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'OPTIONS /authenticate' doesn't match 'GET /logout'
+2020-06-30 17:57:21.849 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:21.849 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'OPTIONS /authenticate' doesn't match 'POST /logout'
+2020-06-30 17:57:21.850 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:21.850 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'OPTIONS /authenticate' doesn't match 'PUT /logout'
+2020-06-30 17:57:21.850 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:21.851 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'OPTIONS /authenticate' doesn't match 'DELETE /logout'
+2020-06-30 17:57:21.851 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:21.851 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:21.851  WARN 8256 --- [http-nio-8083-exec-9] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:21.851 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:21.851 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:21.851 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:21.851 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:21.852 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:21.852 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:21.853 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:21.853 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/authenticate'; against '/authenticate'
+2020-06-30 17:57:21.853 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /authenticate; Attributes: [permitAll]
+2020-06-30 17:57:21.853 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:21.853 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:21.854 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:21.855 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:21.855 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /authenticate reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:21.857 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:21.857 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:21.857 DEBUG 8256 --- [http-nio-8083-exec-9] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:21.860 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:21.860 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:21.860 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:21.860 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:21.860 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:21.860 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'POST /authenticate' doesn't match 'GET /logout'
+2020-06-30 17:57:21.860 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:21.860 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/authenticate'; against '/logout'
+2020-06-30 17:57:21.860 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:21.861 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'POST /authenticate' doesn't match 'PUT /logout'
+2020-06-30 17:57:21.862 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:21.862 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'POST /authenticate' doesn't match 'DELETE /logout'
+2020-06-30 17:57:21.862 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:21.862 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:21.862  WARN 8256 --- [http-nio-8083-exec-10] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:21.862 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:21.862 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:21.862 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:21.862 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:21.863 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:21.863 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:21.863 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:21.863 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/authenticate'; against '/authenticate'
+2020-06-30 17:57:21.863 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /authenticate; Attributes: [permitAll]
+2020-06-30 17:57:21.863 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:21.863 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:21.863 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:21.863 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:21.863 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /authenticate reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:21.904 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.authentication.ProviderManager     : Authentication attempt using org.springframework.security.authentication.dao.DaoAuthenticationProvider
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-10] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'OPTIONS /customer/token' doesn't match 'GET /logout'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'OPTIONS /customer/token' doesn't match 'POST /logout'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'OPTIONS /customer/token' doesn't match 'PUT /logout'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'OPTIONS /customer/token' doesn't match 'DELETE /logout'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:23.081  WARN 8256 --- [http-nio-8083-exec-2] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/authenticate'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/books/**'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/customer/register'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/bookGenre/getByGenre'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/genre'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/h2-console/**'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/customer/token' matched by universal pattern '/**'
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /customer/token; Attributes: [permitAll]
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:23.081 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.security.web.FilterChainProxy        : /customer/token reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:23.097 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:23.098 DEBUG 8256 --- [http-nio-8083-exec-2] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:23.098 DEBUG 8256 --- [http-nio-8083-exec-2] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:23.113 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/logout'
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /customer/token' doesn't match 'POST /logout'
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /customer/token' doesn't match 'PUT /logout'
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /customer/token' doesn't match 'DELETE /logout'
+2020-06-30 17:57:23.114 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:23.115 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:23.152 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:23.152 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:23.152 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:23.153 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:23.153 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:23.153 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/logout'
+2020-06-30 17:57:23.153 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:23.153 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'POST /logout'
+2020-06-30 17:57:23.153 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:23.153 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'PUT /logout'
+2020-06-30 17:57:23.154 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:23.154 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'DELETE /logout'
+2020-06-30 17:57:23.154 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:23.154 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:23.154  WARN 8256 --- [http-nio-8083-exec-3] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:23.154 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:23.154 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:23.154 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:23.154 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:23.154 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:23.155 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:23.155 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:23.155 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/authenticate'
+2020-06-30 17:57:23.155 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/books/**'
+2020-06-30 17:57:23.155 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /books; Attributes: [permitAll]
+2020-06-30 17:57:23.155 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:23.155 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:23.155 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:23.155 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:23.155 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.security.web.FilterChainProxy        : /books reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:23.156 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/logout'
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'POST /logout'
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'PUT /logout'
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'DELETE /logout'
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:23.157  WARN 8256 --- [http-nio-8083-exec-4] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:23.157 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:23.158 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:23.158 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:23.160 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/authenticate'
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/books/**'
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/customer/register'
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/bookGenre/getByGenre'
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/genre'
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /genre; Attributes: [permitAll]
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:23.161 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.security.web.FilterChainProxy        : /genre reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:23.165 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:23.167 DEBUG 8256 --- [http-nio-8083-exec-4] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:23.167 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:23.167 DEBUG 8256 --- [http-nio-8083-exec-4] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:23.170 DEBUG 8256 --- [http-nio-8083-exec-3] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:23.170 DEBUG 8256 --- [http-nio-8083-exec-3] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:23.210 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:23.210 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:23.210 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:23.210 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : SecurityContextHolder not populated with anonymous token, as it already contained: 'org.springframework.security.authentication.UsernamePasswordAuthenticationToken@cdf954dd: Principal: org.springframework.security.core.userdetails.User@3206187d: Username: markoni; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Not granted any authorities'
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] s.CompositeSessionAuthenticationStrategy : Delegating to org.springframework.security.web.authentication.session.ChangeSessionIdAuthenticationStrategy@4ce267cc
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/authenticate'
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/books/**'
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/customer/register'
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/bookGenre/getByGenre'
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/genre'
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/h2-console/**'
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /customer/token' doesn't match 'OPTIONS /**'
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /customer/token; Attributes: [authenticated]
+2020-06-30 17:57:23.211 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@cdf954dd: Principal: org.springframework.security.core.userdetails.User@3206187d: Username: markoni; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Not granted any authorities
+2020-06-30 17:57:23.212 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:23.212 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:23.212 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:23.212 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /customer/token reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:23.232 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:23.233 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:23.233 DEBUG 8256 --- [http-nio-8083-exec-1] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:52.663 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:52.671 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/logout'
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /customer/token' doesn't match 'POST /logout'
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /customer/token' doesn't match 'PUT /logout'
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /customer/token' doesn't match 'DELETE /logout'
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:52.672 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:52.677 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:52.677 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : SecurityContextHolder not populated with anonymous token, as it already contained: 'org.springframework.security.authentication.UsernamePasswordAuthenticationToken@cdf954dd: Principal: org.springframework.security.core.userdetails.User@3206187d: Username: markoni; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Not granted any authorities'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] s.CompositeSessionAuthenticationStrategy : Delegating to org.springframework.security.web.authentication.session.ChangeSessionIdAuthenticationStrategy@4ce267cc
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/authenticate'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/books/**'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/customer/register'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/bookGenre/getByGenre'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/genre'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/customer/token'; against '/h2-console/**'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /customer/token' doesn't match 'OPTIONS /**'
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /customer/token; Attributes: [authenticated]
+2020-06-30 17:57:52.678 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@cdf954dd: Principal: org.springframework.security.core.userdetails.User@3206187d: Username: markoni; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Not granted any authorities; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Not granted any authorities
+2020-06-30 17:57:52.679 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:52.679 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:52.679 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:52.679 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /customer/token reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:52.684 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:52.685 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:52.685 DEBUG 8256 --- [http-nio-8083-exec-5] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/logout'
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'POST /logout'
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'PUT /logout'
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'DELETE /logout'
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:52.792 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:52.792  WARN 8256 --- [http-nio-8083-exec-6] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/authenticate'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/books/**'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/customer/register'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/bookGenre/getByGenre'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/genre'
+2020-06-30 17:57:52.793 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /genre; Attributes: [permitAll]
+2020-06-30 17:57:52.794 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:52.794 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:52.794 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:52.794 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:52.794 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.security.web.FilterChainProxy        : /genre reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:52.798 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:52.799 DEBUG 8256 --- [http-nio-8083-exec-6] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:52.799 DEBUG 8256 --- [http-nio-8083-exec-6] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/logout'
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'POST /logout'
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'PUT /logout'
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'DELETE /logout'
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:52.803  WARN 8256 --- [http-nio-8083-exec-7] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:52.803 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:52.804 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:52.804 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:52.804 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:52.804 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/authenticate'
+2020-06-30 17:57:52.804 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/books/**'
+2020-06-30 17:57:52.804 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /books; Attributes: [permitAll]
+2020-06-30 17:57:52.804 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:52.805 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:52.805 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:52.805 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:52.805 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.security.web.FilterChainProxy        : /books reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:52.817 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:52.826 DEBUG 8256 --- [http-nio-8083-exec-7] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:52.826 DEBUG 8256 --- [http-nio-8083-exec-7] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/logout'
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'POST /logout'
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'PUT /logout'
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:57.369 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'DELETE /logout'
+2020-06-30 17:57:57.370 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:57.371 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/logout'
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'POST /logout'
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'PUT /logout'
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'DELETE /logout'
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:57:57.372 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:57:57.373  WARN 8256 --- [http-nio-8083-exec-9] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/authenticate'
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/books/**'
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /books; Attributes: [permitAll]
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:57.373 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.security.web.FilterChainProxy        : /books reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:57.382  WARN 8256 --- [http-nio-8083-exec-8] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:57:57.382 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:57:57.382 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:57:57.383 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:57:57.384 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:57:57.384 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:57:57.384 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:57:57.384 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:57:57.384 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/authenticate'
+2020-06-30 17:57:57.385 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/books/**'
+2020-06-30 17:57:57.385 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/customer/register'
+2020-06-30 17:57:57.385 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/bookGenre/getByGenre'
+2020-06-30 17:57:57.386 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/genre'
+2020-06-30 17:57:57.386 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /genre; Attributes: [permitAll]
+2020-06-30 17:57:57.386 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:57:57.389 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:57.387 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:57:57.398 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:57:57.403 DEBUG 8256 --- [http-nio-8083-exec-9] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:57.403 DEBUG 8256 --- [http-nio-8083-exec-9] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:57:57.402 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:57:57.404 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.security.web.FilterChainProxy        : /genre reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:57:57.408 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:57:57.408 DEBUG 8256 --- [http-nio-8083-exec-8] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:57:57.409 DEBUG 8256 --- [http-nio-8083-exec-8] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 17:58:01.650 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 17:58:01.650 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 17:58:01.650 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 17:58:01.650 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 17:58:01.650 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books/1'; against '/logout'
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books/1' doesn't match 'POST /logout'
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books/1' doesn't match 'PUT /logout'
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books/1' doesn't match 'DELETE /logout'
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 17:58:01.651  WARN 8256 --- [http-nio-8083-exec-10] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 17:58:01.651 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 17:58:01.652 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 17:58:01.652 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 17:58:01.652 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books/1'; against '/authenticate'
+2020-06-30 17:58:01.652 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books/1'; against '/books/**'
+2020-06-30 17:58:01.652 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /books/1; Attributes: [permitAll]
+2020-06-30 17:58:01.652 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 17:58:01.652 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 17:58:01.652 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 17:58:01.652 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 17:58:01.652 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.security.web.FilterChainProxy        : /books/1 reached end of additional filter chain; proceeding with original chain
+2020-06-30 17:58:01.666 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 17:58:01.669 DEBUG 8256 --- [http-nio-8083-exec-10] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 17:58:01.669 DEBUG 8256 --- [http-nio-8083-exec-10] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 18:00:32.213 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 18:00:32.213 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 18:00:32.213 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 18:00:32.213 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 18:00:32.213 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/logout'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books at position 1 of 11 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books at position 2 of 11 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'POST /logout'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books at position 3 of 11 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'PUT /logout'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books at position 4 of 11 in additional filter chain; firing Filter: 'LogoutFilter'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /genre' doesn't match 'DELETE /logout'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/logout'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2020-06-30 18:00:32.214  WARN 8256 --- [http-nio-8083-exec-1] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'POST /logout'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'PUT /logout'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /books' doesn't match 'DELETE /logout'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books at position 5 of 11 in additional filter chain; firing Filter: 'JwtRequestFilter'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 18:00:32.214  WARN 8256 --- [http-nio-8083-exec-5] com.library.library.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books at position 6 of 11 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2020-06-30 18:00:32.214 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books at position 7 of 11 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books at position 8 of 11 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/authenticate'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/books/**'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/customer/register'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/bookGenre/getByGenre'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/genre'; against '/genre'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books at position 9 of 11 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /genre; Attributes: [permitAll]
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books at position 10 of 11 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books at position 11 of 11 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/authenticate'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/books'; against '/books/**'
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /books; Attributes: [permitAll]
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 18:00:32.215 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.security.web.FilterChainProxy        : /books reached end of additional filter chain; proceeding with original chain
+2020-06-30 18:00:32.216 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@3b7a03de: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2020-06-30 18:00:32.216 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@bf54c56, returned: 1
+2020-06-30 18:00:32.216 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2020-06-30 18:00:32.216 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2020-06-30 18:00:32.216 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.security.web.FilterChainProxy        : /genre reached end of additional filter chain; proceeding with original chain
+2020-06-30 18:00:32.219 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 18:00:32.220 DEBUG 8256 --- [http-nio-8083-exec-1] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 18:00:32.220 DEBUG 8256 --- [http-nio-8083-exec-1] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2020-06-30 18:00:32.228 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@246a3d1e
+2020-06-30 18:00:32.235 DEBUG 8256 --- [http-nio-8083-exec-5] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2020-06-30 18:00:32.235 DEBUG 8256 --- [http-nio-8083-exec-5] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
